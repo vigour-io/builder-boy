@@ -1,3 +1,3 @@
 import a from './a'
 
-export default a
+console.log('A!', a)
