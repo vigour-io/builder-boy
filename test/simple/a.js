@@ -1,2 +1,2 @@
-import bb from './b'
-export default 'a!' + bb
+import ab from './b'
+export default 'a!' + ab
