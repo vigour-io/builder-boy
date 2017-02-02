@@ -8,7 +8,7 @@
   "scripts": {
     "pretest": "standard",
     "test": "node test/index.js",
-    "dev": "nodemon --harmony-async-await test/index.js",
+    "dev": "nodemon --ignore dist/* --harmony-async-await test/index.js",
     "cover": "nyc npm test",
     "travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
