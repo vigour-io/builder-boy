@@ -1,11 +1,2 @@
-import bb from './b'
-var obj = {
-  foo: 'baz'
-}
-const haha = {
-  bla: obj
-}
-function smurk () {
-
-}
-export default 'a!' + bb
+import ab from './b'
+export default 'a!' + ab
