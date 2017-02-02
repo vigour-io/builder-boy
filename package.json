@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "brisky-struct": "git://github.com/vigour-io/brisky-struct.git#feature/enhancements",
+    "chalk": "^1.1.3",
     "chokidar": "^1.6.1"
   },
   "devDependencies": {
