@@ -8,7 +8,7 @@
   "scripts": {
     "pretest": "standard",
     "test": "node test/index.js",
-    "dev": "nodemon --harmony-async-await test/index.js",
+    "dev": "nodemon --ignore dist/* --harmony-async-await test/index.js",
     "cover": "nyc npm test",
     "travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
@@ -35,7 +35,8 @@
     "chokidar": "^1.6.1",
     "detect-import-require": "^2.0.0",
     "is-builtin-module": "^1.0.0",
-    "resolve": "^1.2.0"
+    "resolve": "^1.2.0",
+    "string-hash": "^1.1.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",

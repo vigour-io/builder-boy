@@ -1,5 +1,4 @@
 import a from './a'
+import b from './b'
 
-// import b from './b'
-
-export default a
+console.log('A!', a, b)
