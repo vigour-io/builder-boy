@@ -10,7 +10,8 @@ fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
 
   setTimeout(() => {
     console.log(JSON.stringify(boy.serialize(), false, 2))
-    console.log('::\n', build(real))
+    // console.log('::\n', build(real))
+    const fn = new Function(void 0, build(real))()
   }, 500)
 })
 
