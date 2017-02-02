@@ -4,27 +4,27 @@ const fs = require('fs')
 
 fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
   console.log('00', real)
-  boy.set({
-    [real]: true
+  const f = boy.set({ [ real ]: true })
+  build(f.get(real)).then(result => {
+    console.log('SUCCESS', result)
   })
-
-  setTimeout(() => {
-    console.log(JSON.stringify(boy.serialize(), false, 2))
-    // console.log('::\n', build(real))
-    const fn = new Function(void 0, build(real))()
-  }, 500)
 })
 
-function build (filename, traversed = {}) {
-  const file = boy.get(filename, {})
-  var result = file.get('result', '').compute()
-  file.get('dependencies', {}).keys().forEach(dep => {
-    if (!(dep in traversed)) {
-      traversed[dep] = true
-      result = `${build(dep, traversed)}\n${result}`
-    }
-  })
-  return result
+function build (file, traversed = {}) {
+  var result
+  return file.get('result', '')
+    .once(val => (result = val.compute()))
+    .then(() => Promise.all(file.get('dependencies', {})
+      .map((file, key) => new Promise(resolve => {
+        if (!(key in traversed)) {
+          traversed[key] = true
+          resolve(`${build(file, traversed)}\n`)
+        } else {
+          resolve('')
+        }
+      }))
+    ).then(resolved => `${resolved.join('\n')}\n${result}`)
+  )
 }
 
 // function browserbuild (filename, traversed = {}) {
