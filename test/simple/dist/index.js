@@ -1,10 +1,10 @@
 
-const $file2568989127 = 'myballz'
+const $file3208745914 = 'myballz'
 
-const bb = $file2568989127
-const $file159234052 = 'a!' + bb
+const bb = $file3208745914
+const $file1509896665 = 'a!' + bb
 
-const a = $file159234052
-const b = $file2568989127
+const a = $file1509896665
+const b = $file3208745914
 
 console.log('A!', a, b)
