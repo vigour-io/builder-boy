@@ -1,8 +1,10 @@
+import './b'
 import bb from './b'
 import * as success from './b'
 import { a, bo } from './b'
-require('./a')
+const bla = require('./a')
 
+// console.log($filehashbo)
 var obj = {
   foo: 'baz'
 }
@@ -24,3 +26,6 @@ function smurk (a, b) {
 smurk()
 
 export default 'a!' + bb
+
+// $filehashbo =  'b'
+// $filehasha =  'a'
