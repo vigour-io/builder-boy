@@ -1,6 +1,6 @@
 import bb from './b'
 import * as success from './b'
-import { a, boop } from './b'
+import { a, bo } from './b'
 require('./a')
 
 var obj = {
