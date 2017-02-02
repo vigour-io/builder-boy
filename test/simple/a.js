@@ -1,4 +1,7 @@
 import bb from './b'
+import * as success from './b'
+import { a } from './b'
+require('./a')
 var obj = {
   foo: 'baz'
 }
@@ -7,7 +10,7 @@ const haha = {
 }
 const { a, b } = 'blur'
 
-function smurk () {
-
+function smurk (a, b) {
+  console.log()
 }
 export default 'a!' + bb
