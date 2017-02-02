@@ -1,5 +1,9 @@
-const boy = require('../lib')
+const boy = require('../lib/watcher')
+const fs = require('fs')
 
-boy.build('./test/simple/index.js', './test/simple/dist/index.js').then(val => {
-  require('./simple/dist/index.js')
+fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
+  console.log('00', real)
+  boy.set({
+    [real]: true
+  })
 })
