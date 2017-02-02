@@ -1,3 +1,4 @@
 import a from './a'
+import b from './b'
 
-console.log('A!', a)
+console.log('A!', a, b)
