@@ -7,6 +7,10 @@ const haha = {
 }
 const { a, b } = 'blur'
 
+var x = {}
+x.blarf = true
+console.log(x.blarf)
+
 function smurk () {
 
 }
