@@ -3,28 +3,28 @@ const boy = require('../lib')
 const fs = require('fs')
 
 fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
-  console.log('00', real)
-  const f = boy.set({ [ real ]: true })
-  build(f.get(real)).then(result => {
+  boy.set({ [ real ]: true })
+  build(real).then(result => {
     console.log('SUCCESS', result)
   })
 })
 
-function build (file, traversed = {}) {
+function build (name, traversed = {}) {
   var result
+  const file = boy.get(name, {})
   return file.get('result', '')
     .once(val => (result = val.compute()))
-    .then(() => Promise.all(file.get('dependencies', {})
-      .map((file, key) => new Promise(resolve => {
+    .then(() => Promise.all(
+      file.get('dependencies', {}).map(({ key }) => new Promise(resolve => {
         if (!(key in traversed)) {
           traversed[key] = true
-          resolve(`${build(file, traversed)}\n`)
+          resolve(build(key, traversed))
         } else {
           resolve('')
         }
       }))
-    ).then(resolved => `${resolved.join('\n')}\n${result}`)
-  )
+    )
+  ).then(resolved => `${resolved.join('\n')}\n${result}`)
 }
 
 // function browserbuild (filename, traversed = {}) {
