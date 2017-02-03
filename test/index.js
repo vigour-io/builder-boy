@@ -6,6 +6,9 @@ fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
   boy.set({ [ real ]: true })
   build(real).then(result => {
     console.log('SUCCESS', result)
+    fs.writeFileSync('./test/simple/dist/blurf.js', result)
+    console.log('\n\n\ngo run script!!!!\n')
+    require('./simple/dist/blurf.js')
   })
 })
 

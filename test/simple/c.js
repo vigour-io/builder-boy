@@ -1,1 +1,1 @@
-export default 'haha'
+export default 'its the c file!'
