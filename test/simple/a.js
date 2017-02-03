@@ -1,14 +1,13 @@
 import bla from './b'
 // console.log(bla)
-// var a = bla
-// // bla is shit
-// // need to put this in scope
-// var x = true
+var a = bla
+// bla is shit
+// need to put this in scope
 
-// ;(function (a) {
-//   var bla = 'x'
-//   console.log(a, bla)
-// })()
+;(function (a) {
+  var bla = 'x'
+  console.log(a, bla)
+})()
 
 const x = true
 
