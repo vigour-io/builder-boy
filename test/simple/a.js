@@ -1,6 +1,6 @@
-// import bla from './b'
-var a = 1
-
+import bla from './b'
+var axxxxx = 1
+var a = 2
 // const x = { a, bla }
 
 // export default {
@@ -8,14 +8,22 @@ var a = 1
 //   a
 // }
 
-// export {
-//   a
-// }
+var flurps = 'x'
+
+var x = bla
+
+export {
+  bla,
+  axxxxx,
+  flurps
+}
 
 export var b = a
 
-export function bla () {
+export const xx = x
 
+export function blax () {
+  console.log(a)
 }
 
-// export default a
+export default a
