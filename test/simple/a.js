@@ -10,12 +10,30 @@ import bla from './b'
 //   console.log(a, bla)
 // })()
 
-var x = true
+const x = true
 
-function dirt (a = x, b = bla) {
+var y = () => bla
+
+var bla = {
+  hello (x) {
+    console.log('x', x, bla)
+  }
+}
+
+class StyleSheet {
+  constructor (t) {
+    console.log(t)
+  }
+}
+
+function dirt (a = x, b = bla, { c: g, d }) {
   var b = x
   var c = b
-  var c = bla
+  var d = bla
+}
+
+for (var i = 0; i < 10; i++) {
+  console.log(bla)
 }
 
 // // export default a
