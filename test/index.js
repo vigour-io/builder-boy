@@ -7,22 +7,23 @@ fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
   boy.set({ [ real ]: true })
   var f
   boy.get([ real, 'result' ], {}).on((val, stamp, t) => {
-    if (!f) {
-      f = true
-    } else {
+    if (f) {
+      console.log('go!', stamp)
       moreBuild(real)
     }
   })
-  moreBuild(real)
+  moreBuild(real, () => {
+    f = true
+  })
 })
 
   var cnt = 0
-const moreBuild = (real) => {
+const moreBuild = (real, rdy) => {
   console.log(`👲  builder-boy build ${chalk.blue(real)}`)
   var d = Date.now()
   build(real).then(result => {
     cnt++
-    f = true
+    if (rdy) rdy()
     // console.log('SUCCESS', result)
     console.log(`👲  done building in ${chalk.green(Date.now() - d)} ms`)
     fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result)
@@ -46,7 +47,7 @@ function build (name, traversed = {}) {
         }
       }))
     )
-  ).then(resolved => `${resolved.join('\n')}\n${result}`)
+  ).then(resolved => `${resolved.join('\n-------------------------')}\n${result}`)
 }
 
 // function browserbuild (filename, traversed = {}) {
