@@ -1,6 +1,7 @@
-import bla from './b'
+// import bla from './b'
+import { a, b, c } from './b'
 var axxxxx = 1
-var a = 2
+var ax = 2
 // const x = { a, bla }
 
 // export default {
@@ -10,20 +11,22 @@ var a = 2
 
 var flurps = 'x'
 
-var x = bla
+var x = a
 
 export {
-  bla,
+  a,
+  b,
+  c,
   axxxxx,
   flurps
 }
 
-export var b = a
+export var bx = a
 
 export const xx = x
 
 export function blax () {
-  console.log(a)
+  console.log(ax)
 }
 
 export default a
