@@ -12,6 +12,10 @@ var a = 1
 //   a
 // }
 
-export const b = a
+export var b = a
+
+export function bla () {
+
+}
 
 // export default a
