@@ -1,18 +1,21 @@
-import bla from './b';
+import bla from './b'
 // console.log(bla)
 // var a = bla
 // // bla is shit
 // // need to put this in scope
 // var x = true
 
-;(function (a) {
-  var blxa = 'x'
-  console.log(a, bla)
-})()
+// ;(function (a) {
+//   var bla = 'x'
+//   console.log(a, bla)
+// })()
 
-const x = (a)  => {
-  var b = 'hello'
-  console.log(bla, a, b)
+var x = true
+
+function dirt (a = x, b = bla) {
+  var b = x
+  var c = b
+  var c = bla
 }
 
 // // export default a

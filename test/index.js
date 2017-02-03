@@ -5,7 +5,7 @@ const fs = require('fs')
 fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
   boy.set({ [ real ]: true })
   build(real).then(result => {
-    console.log('SUCCESS', result)
+    // console.log('SUCCESS', result)
   })
 })
 
