@@ -8,10 +8,9 @@ var a = 1
 // var x = true
 const x = { a, bla }
 
-export default {
-  bla,
-  a
-}
+// export default {
+//   bla,
+//   a
+// }
 
-// // export default a
-// // export default '!'
+export default a
