@@ -12,13 +12,13 @@ var cnt = 0
 //   require(`./simple/dist/${cnt}.js`)
 // })
 
-build('test/real/index.js', (err, result) => {
+build('../brisky-struct/src/index.js', (err, result) => {
   cnt++
   fs.writeFileSync(`./test/real/dist/${cnt}.js`, result)
   if (err) {
     console.log(err)
   }
-  console.log('??? result:', result)
+  // console.log('??? result:', result)
 
   // console.log('\n\n\ngo run script!!!!\n')
   console.log('REQUIRE:')
@@ -26,3 +26,18 @@ build('test/real/index.js', (err, result) => {
   require(`./real/dist/${cnt}.js`)
   console.log('---------------------------------------------')
 })
+
+// build('brisky-struct', (err, result) => {
+//   cnt++
+//   fs.writeFileSync(`./test/real/dist/${cnt}.js`, result)
+//   if (err) {
+//     console.log(err)
+//   }
+//   console.log('??? result:', result)
+
+//   // console.log('\n\n\ngo run script!!!!\n')
+//   console.log('REQUIRE:')
+//   console.log('---------------------------------------------')
+//   require(`./real/dist/${cnt}.js`)
+//   console.log('---------------------------------------------')
+// })
