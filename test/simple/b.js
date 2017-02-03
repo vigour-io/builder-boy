@@ -9,8 +9,18 @@ var bla = {
   [c]: x
 }
 
-console.log('?????', Math.random(), bla)
+var y = function () {
+  return bla
+}
+
+// const { x, y } frm
+
+console.log('????11xxxxxxxxxxxx?', Math.random(), y())
 
 export {
   a, b, c, x
 }
+
+// external deps
+// requires
+// browswr builds

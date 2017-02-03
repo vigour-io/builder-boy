@@ -1,8 +1,8 @@
-export default 'its the c file!'
-// import file from './generated/file500.js'
+export default 'its the c!'
+// import file from './generated/file100.js'
 // df!@#x
 const blurf = (val) => {
-  return val + '!22222421122121121!2lo'
+  return val + '!2222242121121!2lo'
 }
 
 // export default blurf(file)
