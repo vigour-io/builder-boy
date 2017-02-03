@@ -1,16 +1,35 @@
 const browserresolve = require('browser-resolve')
 const boy = require('../lib')
 const fs = require('fs')
+const chalk = require('chalk')
 
 fs.realpath(__dirname + '/simple/a.js', (err, real) => { // eslint-disable-line
   boy.set({ [ real ]: true })
-  build(real).then(result => {
-    console.log('SUCCESS', result)
-    fs.writeFileSync('./test/simple/dist/blurf.js', result)
-    console.log('\n\n\ngo run script!!!!\n')
-    require('./simple/dist/blurf.js')
+  var f
+  boy.get([ real, 'result' ], {}).on((val, stamp, t) => {
+    if (!f) {
+      f = true
+    } else {
+      moreBuild(real)
+    }
   })
+  moreBuild(real)
 })
+
+  var cnt = 0
+const moreBuild = (real) => {
+  console.log(`👲  builder-boy build ${chalk.blue(real)}`)
+  var d = Date.now()
+  build(real).then(result => {
+    cnt++
+    f = true
+    // console.log('SUCCESS', result)
+    console.log(`👲  done building in ${chalk.green(Date.now() - d)} ms`)
+    fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result)
+    console.log('\n\n\ngo run script!!!!\n')
+    require(`./simple/dist/${cnt}.js`)
+  })
+}
 
 function build (name, traversed = {}) {
   var result

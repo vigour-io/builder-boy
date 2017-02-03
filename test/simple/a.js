@@ -2,4 +2,4 @@
 // import { a, b, c as d } from './b'
 import * as blurf from './b'
 
-console.log(blurf.a, blurf.b, blurf.d)
+console.log('1212', blurf.a, blurf.b, blurf.c, blurf.x)
