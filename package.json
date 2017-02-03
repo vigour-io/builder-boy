@@ -2,9 +2,7 @@
   "name": "builder-boy",
   "description": "Build and watch es modules FAST",
   "version": "0.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "lib/index.js",
   "scripts": {
     "pretest": "standard",
     "test": "node test/index.js",
