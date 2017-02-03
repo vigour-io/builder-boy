@@ -1,5 +1,18 @@
-#!/usr/bin/env node
 const build = require('../')
-const argsv = process.argsv
-console.log(argsv)
-// build()
+const file = process.argv[2]
+const dest = process.argv[3]
+const chalk = require('chalk')
+const fs = require('fs')
+build(file, (err, code) => {
+  if (err) {
+    console.log(err)
+  } else {
+    if (dest) {
+      fs.writeFile(dest, code, err => {
+        if (!err) {
+          console.log(`👲  wrote file to ${chalk.green(dest)}`)
+        }
+      })
+    }
+  }
+})

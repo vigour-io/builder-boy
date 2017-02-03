@@ -1,7 +1,7 @@
 import c from './c'
 const a = 'a'
 const b = 'b'
-const x = '👲'
+const x = '👲👲👲👲'
 
 // const c = 'bla'
 
