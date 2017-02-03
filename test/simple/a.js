@@ -21,8 +21,8 @@ var bla = {
 }
 
 class StyleSheet {
-  constructor (t) {
-    console.log(t)
+  constructor (t, x) {
+    console.log(t, bla, x, y)
   }
 }
 
