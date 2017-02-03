@@ -9,7 +9,7 @@ var bla = {
   [c]: true
 }
 
-console.log(bla)
+console.log('?????', Math.random(), bla)
 
 export {
   a, b, c, x
