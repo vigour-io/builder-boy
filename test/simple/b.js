@@ -13,9 +13,12 @@ var y = function () {
   return bla
 }
 
+
+// @243234cx
+
 // const { x, y } frm
 
-console.log('????11xxxxxxxxxxxx?', Math.random(), y())
+console.log('hello', Math.random(), y())
 
 export {
   a, b, c, x
@@ -23,4 +26,4 @@ export {
 
 // external deps
 // requires
-// browswr builds
+// browser builds
