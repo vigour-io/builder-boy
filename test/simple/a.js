@@ -1,18 +1,26 @@
-// import c from './c'
-// import { a, b, c as d, x as fun } from './b'
-// import * as blurf from './b'
-//
+import c from './c'
 
 const y = (x) => {
-  if (x === 1) bla('hello')
+  bla('hello')
 }
+
+const blam = {
+  c
+}
+
+export const blaxx = true
 
 const bla = (a) => {
-  console.log(a)
+  console.log(c)
+  const x = {
+    c
+  }
 }
 
-y(1)
+// y(1)
+// var a = true
+console.log(c, bla())
 
-// var a = 'ballz'
-// console.log(a, b, d)
-// console.log('1xxxxsssxx212', a, b, d, fun)
+export const blar = c
+
+export { c }
