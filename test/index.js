@@ -19,12 +19,14 @@ var cnt = 0
 
 build('../brisky-struct/src/index.js', (err, result) => {
   if (err) {
-    console.log('.....ERROR', !!result, cnt, err.file)
+    console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
     // console.log('??? result:', result)
     cnt++
-    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result)
+    // console.log(result.node)
+
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
     // console.log('\n\n\ngo run script!!!!\n')
     console.log('REQUIRE:')
     console.log('---------------------------------------------')

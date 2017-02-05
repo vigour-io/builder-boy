@@ -10,7 +10,7 @@ build(file, (err, code) => {
     }
   } else {
     if (dest) {
-      fs.writeFile(dest, code, err => {
+      fs.writeFile(dest, code.node, err => {
         if (!err) {
           console.log(`👲  wrote file to ${chalk.green(dest)}`)
         }
