@@ -2,36 +2,40 @@ const build = require('../')
 const fs = require('fs')
 
 var cnt = 0
-// build('test/simple/a.js', (err, result) => {
-//   if (err) {
-//     console.log('error', err)
-//     return
-//   }
-//   cnt++
-//   fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result)
-//   console.log('\n\n\ngo run script!!!!\n')
-//   require(`./simple/dist/${cnt}.js`)
-// })
-
-build('../brisky-struct/src/index.js', (err, result) => {
+build('test/simple/a.js', (err, result) => {
   if (err) {
-    console.log('.....ERROR', !!result, cnt, err.file)
+    console.log('error', err)
     return
-  } else {
-    // console.log('??? result:', result)
-    cnt++
-    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result)
-    // console.log('\n\n\ngo run script!!!!\n')
-    console.log('REQUIRE:')
-    console.log('---------------------------------------------')
-    try {
-      require(`./real/dist/${cnt}.js`)
-    } catch (e) {
-      console.log('lulllzors', e)
-    }
-    console.log('---------------------------------------------')
+  }
+  cnt++
+  fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result)
+  console.log('\n\n\ngo run script!!!!\n')
+  try {
+    require(`./simple/dist/${cnt}.js`)
+  } catch (e) {
+    console.log(e)
   }
 })
+
+// build('../brisky-struct/src/index.js', (err, result) => {
+//   if (err) {
+//     console.log('.....ERROR', !!result, cnt, err.file)
+//     return
+//   } else {
+//     // console.log('??? result:', result)
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result)
+//     // console.log('\n\n\ngo run script!!!!\n')
+//     console.log('REQUIRE:')
+//     console.log('---------------------------------------------')
+//     try {
+//       require(`./real/dist/${cnt}.js`)
+//     } catch (e) {
+//       console.log('lulllzors', e)
+//     }
+//     console.log('---------------------------------------------')
+//   }
+// })
 
 // build('brisky-struct', (err, result) => {
 //   cnt++
