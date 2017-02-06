@@ -1,6 +1,9 @@
+import haha from './c.js'
+
 const generator = (t, val, stamp) => iterator(t, val(t, stamp), stamp)
 
 const iterator = (t, iteratee, stamp, val) => {
+  console.log(haha)
   const id = ++uid
   if (!t.async) {
     t.async = [ iteratee, stamp, id ]
