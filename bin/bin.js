@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
