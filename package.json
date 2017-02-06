@@ -34,7 +34,7 @@
     "acorn": "^4.0.4",
     "astw": "^2.0.0",
     "brisky-stamp": "^4.0.0",
-    "brisky-struct": "git://github.com/vigour-io/brisky-struct.git#feature/enhancements",
+    "brisky-struct": "unstable",
     "browser-resolve": "^1.11.2",
     "chalk": "^1.1.3",
     "chokidar": "^1.6.1",
