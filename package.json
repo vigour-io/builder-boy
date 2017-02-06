@@ -1,7 +1,7 @@
 {
   "name": "builder-boy",
   "description": "Build and watch es modules FAST",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "scripts": {
     "pretest": "standard",
@@ -9,10 +9,10 @@
     "dev": "nodemon --ignore dist/* --harmony-async-await test/index.js",
     "cover": "nyc npm test",
     "travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "builder-boy": "node ./bin/bin.js"
+    "builder-boy": "node ./bin/cmd.js"
   },
   "bin": {
-    "builder-boy": "node ./bin/bin.js"
+    "builder-boy": "bin/cmd.js"
   },
   "repository": {
     "type": "git",
