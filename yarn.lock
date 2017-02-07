@@ -294,9 +294,9 @@ brisky-stamp@^4.0.0:
   dependencies:
     global "^4.3.1"
 
-"brisky-struct@git://github.com/vigour-io/brisky-struct.git#feature/enhancements":
-  version "1.1.7"
-  resolved "git://github.com/vigour-io/brisky-struct.git#73aa807cad36357e9cd71a60e0291241892d22c3"
+brisky-struct@unstable:
+  version "1.1.7-7f398b2252470239555121110f7ee1cd796df8cd"
+  resolved "https://registry.yarnpkg.com/brisky-struct/-/brisky-struct-1.1.7-7f398b2252470239555121110f7ee1cd796df8cd.tgz#50a16515941128bca36b3ab42e81648d526950b0"
   dependencies:
     brisky-stamp "^4.0.0"
     string-hash "^1.1.0"
