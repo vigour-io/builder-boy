@@ -4,6 +4,7 @@ const file = process.argv[2]
 const dest = process.argv[3]
 const chalk = require('chalk')
 const fs = require('fs')
+
 build(file, (err, code) => {
   if (err) {
     if (!err.file) {
@@ -11,18 +12,25 @@ build(file, (err, code) => {
     }
   } else {
     if (dest) {
-      fs.writeFile(dest, code.node, err => {
-        if (!err) {
-          console.log(`👲  wrote node to ${chalk.green(dest)}`)
-        }
-      })
-
-      const browser = dest.replace(/\.js$/, '.browser.js')
-      fs.writeFile(browser, code.browser, err => {
-        if (!err) {
-          console.log(`👲  wrote browser to ${chalk.green(browser)}`)
-        }
-      })
+      Promise.all([
+        new Promise(resolve => {
+          fs.writeFile(dest, code.node, err => {
+            if (!err) {
+              console.log(`👲  wrote node to ${chalk.green(dest)}`)
+              resolve()
+            }
+          })
+        }),
+        new Promise(resolve => {
+          const browser = dest.replace(/\.js$/, '.browser.js')
+          fs.writeFile(browser, code.browser, err => {
+            if (!err) {
+              console.log(`👲  wrote browser to ${chalk.green(browser)}`)
+              resolve()
+            }
+          })
+        })
+      ]).then(() => process.exit())
     }
   }
 })
