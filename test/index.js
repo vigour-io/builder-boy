@@ -1,5 +1,6 @@
 const build = require('../')
 const fs = require('fs')
+// const browserify = require('browserify')
 
 var cnt = 0
 // build('test/simple/a.js', (err, result) => {
