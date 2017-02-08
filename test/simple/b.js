@@ -1,2 +1,5 @@
-export const c = 'b'
+const x = 'b.c'
 
+export {
+  x
+}
