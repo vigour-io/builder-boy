@@ -1,6 +1,15 @@
-// something messes up here
-import { c } from './b'
-// import { e } from './c'
-import { c as d } from './c'
+import { c } from './c'
 
-console.log(c, d)
+// const a = 'a'
+// const b = 'b'
+// const c = 'c'
+
+// export { a, b, c }
+
+// something wrong here
+// order of assignment
+export default listen
+function listen () {
+  console.log(c)
+  // do something
+}
