@@ -18,7 +18,7 @@ var cnt = 0
 //   }
 // })
 
-build('../brisky-struct/src/index.js', (err, result) => {
+build('../brisky-render/src/index.js', (err, result) => {
   console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
