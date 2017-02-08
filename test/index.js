@@ -1,6 +1,6 @@
 const build = require('../')
 const fs = require('fs')
-const browserify = require('browserify')
+const browserifynice = require('../lib/browser')
 
 var cnt = 0
 // build('test/simple/a.js', (err, result) => {
@@ -27,8 +27,11 @@ build('../brisky-render/src/index.js', (err, result) => {
   } else {
     cnt++
     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
+    // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
 
-    fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
+    browserifynice(result.browser, (err, data) => {
+      console.log('done', err, data)
+    })
 
     console.log('---------------------------------------------')
     try {
