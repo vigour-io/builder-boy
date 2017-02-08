@@ -8,6 +8,7 @@ build('test/simple/a.js', (err, result) => {
     return
   }
   cnt++
+  console.log(result.node)
   fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result.node)
   console.log('\n\n\ngo run script!!!!\n')
   try {
