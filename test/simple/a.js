@@ -10,5 +10,4 @@ export { a, b, c }
 export default listen
 function listen () {
   console.log(c)
-  // do something
 }
