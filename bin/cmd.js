@@ -11,10 +11,16 @@ build(file, (err, code) => {
     }
   } else {
     if (dest) {
-      console.log('dest:', dest)
       fs.writeFile(dest, code.node, err => {
         if (!err) {
-          console.log(`👲  wrote file to ${chalk.green(dest)}`)
+          console.log(`👲  wrote node to ${chalk.green(dest)}`)
+        }
+      })
+
+      const browser = dest.replace(/\.js$/, '.browser.js')
+      fs.writeFile(browser, code.browser, err => {
+        if (!err) {
+          console.log(`👲  wrote browser to ${chalk.green(browser)}`)
         }
       })
     }
