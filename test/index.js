@@ -25,7 +25,7 @@ build('../brisky-struct/src/index.js', (err, result) => {
     return
   } else {
     cnt++
-    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
     console.log('---------------------------------------------')
     try {
       console.log(require(`./real/dist/${cnt}.js`))
