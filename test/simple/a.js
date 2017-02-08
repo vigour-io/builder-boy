@@ -1,25 +1,25 @@
-import { v, xx } from './d'
-import { x } from './b'
-import c from './c'
+import on from './g'
+// import { create, set } from './b'
+// import { property } from './c'
+// import { types } from './d'
+// import { getDefault } from './e'
+import inject from './f'
 
-const a = 'a'
-const b = 'b'
+const struct = {}
+const getProps = t => {}
 
-// export { a, b, c }
+const props = {
+  inject
+}
 
-// something wrong here
-// order of assignment
-console.log(c, ' --- ', x, ' --- ',  v, xx)
+const a = () => {}
 
-// export default listen
-// function listen () {
-//   console.log(c)
-// }
+const b = () => {}
 
-/*
-import { getFn, getData, get } from '../get'
-import { getKeys } from '../keys'
-import subscription from './subscription'
-*/
+const c = () => {}
 
-export { a, b }
+const d = () => {}
+
+const cc = () => {}
+
+struct.instances = false
