@@ -1,10 +1,9 @@
 import { c } from './c'
 
-// const a = 'a'
-// const b = 'b'
-// const c = 'c'
+const a = 'a'
+const b = 'b'
 
-// export { a, b, c }
+export { a, b, c }
 
 // something wrong here
 // order of assignment
