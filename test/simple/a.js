@@ -1,13 +1,6 @@
-import { c } from './c'
-
-const a = 'a'
-const b = 'b'
-
-export { a, b, c }
-
-// something wrong here
-// order of assignment
-export default listen
-function listen () {
-  console.log(c)
-}
+import { create, set } from '../manipulate'
+import { property } from '../property'
+import { types } from './types'
+import { getDefault } from '../get'
+import inject from './inject'
+import on from './on'
