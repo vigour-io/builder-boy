@@ -39,7 +39,9 @@ build(file, (err, code) => {
             }
           })
         })
-      ]).then(() => process.exit())
+      ])
     }
   }
 })
+
+// .then(() => process.exit())
