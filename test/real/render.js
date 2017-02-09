@@ -1,9 +1,12 @@
 import br from '../../../brisky-render'
 
-const fs = require('fs')
+const bla = require('./bla.json')
+
+// const fs = require('fs')
+// console.log(bla)
 
 document.body.appendChild(br.render({
-  text: 'hello world',
+  text: 'hello worxld',
   style: {
     color: 'rgb(20, 20, 20)',
     padding: '15px',
