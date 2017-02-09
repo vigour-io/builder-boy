@@ -29,6 +29,15 @@ build(file, (err, code) => {
               resolve()
             }
           })
+        }),
+        new Promise(resolve => {
+          const inlineBrowser = dest.replace(/\.js$/, '.browser.inline.js')
+          fs.writeFile(inlineBrowser, code.inlineBrowser, err => {
+            if (!err) {
+              console.log(`👲  wrote inlineBrowser to ${chalk.green(inlineBrowser)}`)
+              resolve()
+            }
+          })
         })
       ]).then(() => process.exit())
     }
