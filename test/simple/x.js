@@ -1,9 +1,15 @@
-// var bstamp = require('brisky-stamp')
+var bstamp = require('brisky-stamp')
 // var bla = 'ha!'
 
-import bstamp from 'brisky-stamp'
+// import bstamp from 'brisky-stamp'
 // var bstamp = require('brisky-stamp')
 
 var bla = 'ha!'
-console.log(bstamp)
-module.exports = bla
+
+module.exports = {
+  bla,
+  stamp: bstamp,
+  y: 1111
+}
+
+// module.exports = bla

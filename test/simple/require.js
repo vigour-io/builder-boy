@@ -1,9 +1,7 @@
-// const fs = require('fs')
-// import x from './x'
-var x = require('./c')
-// const notation as well ofc... and bla: blurf (the as)
+// var x = require('./c')
 
-var bla = x
+const { stamp, y, bla: blurf } = require('./x')
 
-// var xx = fs
-console.log('bla', bla)
+console.log('bla', stamp.create(), y, blurf)
+
+exports.bla = true
