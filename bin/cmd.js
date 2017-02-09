@@ -3,6 +3,7 @@ const { dirname, isAbsolute, join } = require('path')
 const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
+const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
 const chalk = require('chalk')
 const fs = require('fs')
 const cwd = process.cwd()
@@ -37,7 +38,7 @@ build(file, (err, code) => {
         write(dest, code, 'node'),
         write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
         write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
-      ]).then(() => process.exit())
+      ]).then(() => !watch && process.exit())
     }
   }
 })
