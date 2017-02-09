@@ -1,9 +1,30 @@
 #!/usr/bin/env node
+const { dirname, isAbsolute, join } = require('path')
 const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
 const chalk = require('chalk')
 const fs = require('fs')
+const cwd = process.cwd()
+
+const write = (dest, code, type) => new Promise((resolve, reject) => {
+  if (!isAbsolute(dest)) dest = join(cwd, dest)
+  const path = dirname(dest).split('/')
+  var dir = ''
+  path.forEach(part => {
+    if (!fs.existsSync(dir += `/${part}`)) {
+      fs.mkdirSync(dir)
+    }
+  })
+  fs.writeFile(dest, code[type], err => {
+    if (err) {
+      reject(err)
+    } else {
+      console.log(`👲  wrote ${type} to ${chalk.green(dest)}`)
+      resolve()
+    }
+  })
+})
 
 build(file, (err, code) => {
   if (err) {
@@ -13,33 +34,10 @@ build(file, (err, code) => {
   } else {
     if (dest) {
       Promise.all([
-        new Promise(resolve => {
-          fs.writeFile(dest, code.node, err => {
-            if (!err) {
-              console.log(`👲  wrote node to ${chalk.green(dest)}`)
-              resolve()
-            }
-          })
-        }),
-        new Promise(resolve => {
-          const browser = dest.replace(/\.js$/, '.browser.js')
-          fs.writeFile(browser, code.browser, err => {
-            if (!err) {
-              console.log(`👲  wrote browser to ${chalk.green(browser)}`)
-              resolve()
-            }
-          })
-        }),
-        new Promise(resolve => {
-          const inlineBrowser = dest.replace(/\.js$/, '.browser.inline.js')
-          fs.writeFile(inlineBrowser, code.inlineBrowser, err => {
-            if (!err) {
-              console.log(`👲  wrote inlineBrowser to ${chalk.green(inlineBrowser)}`)
-              resolve()
-            }
-          })
-        })
-      ])
+        write(dest, code, 'node'),
+        write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
+        write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
+      ]).then(() => process.exit())
     }
   }
 })
