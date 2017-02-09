@@ -3,7 +3,7 @@ const fs = require('fs')
 // const browserifynice = require('../lib/browser')
 
 var cnt = 0
-build('test/simple/require.js', (err, result) => {
+build('test/simple/bla.js', (err, result) => {
   if (err) {
     console.log('error', err)
     return
