@@ -1,12 +1,14 @@
 #!/usr/bin/env node
-const { dirname } = require('path')
+const { dirname, isAbsolute, join } = require('path')
 const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
 const chalk = require('chalk')
 const fs = require('fs')
+const cwd = process.cwd()
 
 const write = (dest, code, type) => new Promise((resolve, reject) => {
+  if (!isAbsolute(dest)) dest = join(cwd, dest)
   const path = dirname(dest).split('/')
   var dir = ''
   path.forEach(part => {
