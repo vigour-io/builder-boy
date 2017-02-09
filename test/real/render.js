@@ -1,5 +1,7 @@
 import br from '../../../brisky-render'
 
+const fs = require('fs')
+
 document.body.appendChild(br.render({
   text: 'hello world',
   style: {
