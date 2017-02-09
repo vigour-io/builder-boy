@@ -19,54 +19,50 @@ var cnt = 0
 //   }
 // })
 
-
-build('../brisky-struct/src/index.js', (err, result) => {
-  if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-
-    console.log('---------------------------------------------')
-    try {
-      console.log(require(`./real/dist/${cnt}.js`))
-    } catch (e) {
-      console.log('lulllzors', e)
-    }
-    console.log('---------------------------------------------')
-  // })
-  }
-})
-
-// build file as input
-// build('./test/real/render.js', (err, result) => {
-//   // console.log('hello wtf....')
+// build('../brisky-struct/src/index.js', (err, result) => {
 //   if (err) {
 //     // console.log('.....ERROR', !!result, cnt, err)
 //     return
 //   } else {
 //     cnt++
-//     // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
-//     // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
+//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
 //
-//     // data = `const require = (val) => {}; ${data}`
-//     browserifynice(result.browser, (err, data) => {
-//       // console.log(err)
-//       fs.writeFileSync('./test/real/dist/update.json', cnt)
-//       fs.writeFileSync(`./test/real/dist/blarx.js`, data)
-//     })
-//
-//     // console.log('---------------------------------------------')
-//     // try {
-//     //   console.log(require(`./real/dist/${cnt}.js`))
-//     // } catch (e) {
-//     //   console.log('lulllzors', e)
-//     // }
-//     // console.log('---------------------------------------------')
+//     console.log('---------------------------------------------')
+//     try {
+//       console.log(require(`./real/dist/${cnt}.js`))
+//     } catch (e) {
+//       console.log('lulllzors', e)
+//     }
+//     console.log('---------------------------------------------')
 //   // })
 //   }
 // })
+
+// build file as input
+build('./test/real/render.js', (err, result) => {
+  // console.log('hello wtf....')
+  if (err) {
+    // console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    cnt++
+    // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
+    // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
+
+    // data = `const require = (val) => {}; ${data}`
+    console.log(result.inlineBrowser)
+    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+
+    // console.log('---------------------------------------------')
+    // try {
+    //   console.log(require(`./real/dist/${cnt}.js`))
+    // } catch (e) {
+    //   console.log('lulllzors', e)
+    // }
+    // console.log('---------------------------------------------')
+  // })
+  }
+})
 
 // build('./test/real/index.js', (err, result) => {
 //   console.log('hello wtf....')
