@@ -26,11 +26,16 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
 
 build(file, (err, code) => {
   if (err) {
-    if (!err.file) console.log(err)
-  } else if (dest) {
-    Promise.all([
-      write(dest, code.node),
-      write(dest, code.browser)
-    ]).then(() => process.exit())
+    if (!err.file) {
+      console.log(err)
+    }
+  } else {
+    if (dest) {
+      Promise.all([
+        write(dest, code, 'node'),
+        write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
+        write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
+      ]).then(() => process.exit())
+    }
   }
 })
