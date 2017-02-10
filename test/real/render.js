@@ -3,7 +3,9 @@ import hub from '../../../hub.js'
 
 const bla = require('./bla.json')
 
-const fs = require('fs')
+const exotic = require('./exotic')
+
+// const fs = require('fs')
 
 const state = hub({
   hello: 'hello what?'
