@@ -15,7 +15,7 @@ const state = hub({
 //   hello: 'HELLO!1'
 // }
 
-// // // console.log(state)
+// // // console.log(state
 
 document.body.appendChild(br.render({
   text: { $: 'hello' },
