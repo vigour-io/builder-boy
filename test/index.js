@@ -1,6 +1,5 @@
 const build = require('../')
 const fs = require('fs')
-const browserifynice = require('../lib/browser')
 
 var cnt = 0
 // build('test/simple/bla.js', (err, result) => {
@@ -39,7 +38,32 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
+//     // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
+//     // data = `const require = (val) => {}; ${data}`
+//     // console.log(result.inlineBrowser)
+//       // fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//     // console.log('---------------------------------------------')
+//     // try {
+//     //   console.log(require(`./real/dist/${cnt}.js`))
+//     // } catch (e) {
+//     //   console.log('lulllzors', e)
+//     // }
+//     // console.log('---------------------------------------------')
+//   // })
+//   }
+// })
+
+// build file as input
+build('../phoenix/hub/index.js', (err, result) => {
   // console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
@@ -50,7 +74,11 @@ build('./test/real/render.js', (err, result) => {
     // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
     // data = `const require = (val) => {}; ${data}`
     // console.log(result.inlineBrowser)
-      fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    if (result.node.indexOf('$4061722249.RedisClient') !== -1) {
+      console.log('WRONG ERROR WRONG')
+      // fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
+    }
+    fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
     // console.log('---------------------------------------------')
     // try {
     //   console.log(require(`./real/dist/${cnt}.js`))
@@ -63,21 +91,22 @@ build('./test/real/render.js', (err, result) => {
 })
 
 // '../hub.js/src/index.js'
-// build('./test/real/hub.js', (err, result) => {
+// build('./test/real/index.js', (err, result) => {
 //   console.log('hello wtf....')
 //   if (err) {
 //     console.log('.....ERROR', !!result, cnt, err)
 //     return
 //   } else {
+//     console.log(result.node)
 //     cnt++
-//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-//     console.log('---------------------------------------------')
-//     try {
-//       require(`./real/dist/${cnt}.js`)
-//     } catch (e) {
-//       console.log('lulllzors', e)
-//     }
-//     console.log('---------------------------------------------')
+//     fs.writeFileSync(`./test/real/dist/1.js`, result.node)
+//     // console.log('---------------------------------------------')
+//     // try {
+//     //   require(`./real/dist/${cnt}.js`)
+//     // } catch (e) {
+//     //   console.log('lulllzors', e)
+//     // }
+//     // console.log('---------------------------------------------')
 //   }
 // })
 
