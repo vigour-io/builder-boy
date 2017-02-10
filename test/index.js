@@ -63,30 +63,14 @@ var cnt = 0
 // })
 
 // build file as input
-build('../phoenix/hub/index.js', (err, result) => {
+build('./test/real/render.js', (err, result) => {
   // console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
     cnt++
-    // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
-    // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
-    // data = `const require = (val) => {}; ${data}`
-    // console.log(result.inlineBrowser)
-    if (result.node.indexOf('$4061722249.RedisClient') !== -1) {
-      console.log('WRONG ERROR WRONG')
-      // fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
-    }
     fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
-    // console.log('---------------------------------------------')
-    // try {
-    //   console.log(require(`./real/dist/${cnt}.js`))
-    // } catch (e) {
-    //   console.log('lulllzors', e)
-    // }
-    // console.log('---------------------------------------------')
-  // })
   }
 })
 
