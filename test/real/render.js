@@ -1,8 +1,14 @@
-import br from '../../../brisky-render'
+// import br from '../../../brisky-render'
 // import hub from '../../../hub.js'
 
 // const bla = require('./bla.json')
-// const fs = require('fs')
+import 'fs' from 'fs'
+
+import 'zlib' from 'zlib'
+
+const bla = () => {
+  const x = fs.readFileSync()
+}
 
 // const exotic = require('./exotic')
 // console.log(exotic)

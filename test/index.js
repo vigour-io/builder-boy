@@ -39,7 +39,7 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
+build('./test/real/server.js', (err, result) => {
   // console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
@@ -52,7 +52,7 @@ build('./test/real/render.js', (err, result) => {
     // data = `const require = (val) => {}; ${data}`
     // console.log(result.inlineBrowser)
 
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
 
     // console.log('---------------------------------------------')
     // try {
