@@ -51,6 +51,7 @@ build('./test/real/render.js', (err, result) => {
 
     // data = `const require = (val) => {}; ${data}`
     // console.log(result.inlineBrowser)
+
     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
 
     // console.log('---------------------------------------------')
