@@ -39,28 +39,47 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
-  // console.log('hello wtf....')
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
+//     // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
+
+//     // data = `const require = (val) => {}; ${data}`
+//     // console.log(result.inlineBrowser)
+//     // fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+
+//     // console.log('---------------------------------------------')
+//     // try {
+//     //   console.log(require(`./real/dist/${cnt}.js`))
+//     // } catch (e) {
+//     //   console.log('lulllzors', e)
+//     // }
+//     // console.log('---------------------------------------------')
+//   // })
+//   }
+// })
+
+// '../hub.js/src/index.js'
+build('./test/real/hub.js', (err, result) => {
+  console.log('hello wtf....')
   if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
+    console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
     cnt++
-    // fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.browser)
-    // fs.writeFileSync(`./test/real/dist/browser.js`, result.browser)
-
-    // data = `const require = (val) => {}; ${data}`
-    // console.log(result.inlineBrowser)
-    // fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
-
-    // console.log('---------------------------------------------')
-    // try {
-    //   console.log(require(`./real/dist/${cnt}.js`))
-    // } catch (e) {
-    //   console.log('lulllzors', e)
-    // }
-    // console.log('---------------------------------------------')
-  // })
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+    console.log('---------------------------------------------')
+    try {
+      require(`./real/dist/${cnt}.js`)
+    } catch (e) {
+      console.log('lulllzors', e)
+    }
+    console.log('---------------------------------------------')
   }
 })
 
