@@ -39,7 +39,7 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/index.js', (err, result) => {
+build('./test/real/render.js', (err, result) => {
   // console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
