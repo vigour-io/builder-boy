@@ -2,16 +2,18 @@ import br from '../../../brisky-render'
 // import hub from '../../../hub.js'
 
 // const bla = require('./bla.json')
+// const fs = require('fs')
 
 // const exotic = require('./exotic')
 // console.log(exotic)
+
 // const fs = require('fs')
 
 // const state = hub({
 //   hello: 'hello what?'
 // })
 
-// console.log(state)
+// // console.log(state)
 
 // document.body.appendChild(br.render({
 //   text: { $: 'hello' },
@@ -43,6 +45,6 @@ import br from '../../../brisky-render'
 //   }
 // }, state))
 
-// setInterval(() => {
-//   window.location.reload()
-// }, 200)
+// // setInterval(() => {
+// //   window.location.reload()
+// // }, 200)
