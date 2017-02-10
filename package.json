@@ -1,16 +1,16 @@
 {
   "name": "builder-boy",
   "description": "Build and watch es modules FAST",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "scripts": {
-    "pretest": "standard",
     "test": "node test/index.js",
     "dev": "nodemon --ignore dist/* --harmony-async-await test/index.js",
     "cover": "nyc npm test",
     "travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "builder-boy": "node ./bin/cmd.js"
   },
+  "precommit": "",
   "bin": {
     "builder-boy": "bin/cmd.js"
   },
