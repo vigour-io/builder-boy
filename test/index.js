@@ -39,7 +39,7 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/index.js', (err, result) => {
+build('./test/real/render.js', (err, result) => {
   // console.log('hello wtf....')
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
@@ -52,7 +52,13 @@ build('./test/real/index.js', (err, result) => {
     // data = `const require = (val) => {}; ${data}`
     // console.log(result.inlineBrowser)
 
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    if (result.inlineBrowser.indexOf('BROWSER-NODE BUILD') === -1) {
+      console.log('WRONG!!@#@!!@#!@#')
+      fs.writeFileSync(`./test/real/dist/blarx.js`, 'kak!')
+    } else {
+      fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    }
+
 
     // console.log('---------------------------------------------')
     // try {

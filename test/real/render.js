@@ -1,25 +1,22 @@
-// import br from '../../../brisky-render'
-// import hub from '../../../hub.js'
+// import br from 'brisky-render'
+// // import hub from '../../../hub.js'
 
 // const bla = require('./bla.json')
-import 'fs' from 'fs'
 
-import 'zlib' from 'zlib'
-
-const bla = () => {
-  const x = fs.readFileSync()
-}
 
 // const exotic = require('./exotic')
-// console.log(exotic)
+// // console.log(exotic)
 
-// const fs = require('fs')
+// // const fs = require('fs')
 
-// const state = hub({
-//   hello: 'hello what?'
-// })
+// // const state = hub({
+// //   hello: 'hello what?'
+// // })
+// const state = {
+//   hel
+// }
 
-// // console.log(state)
+// // // console.log(state)
 
 // document.body.appendChild(br.render({
 //   text: { $: 'hello' },
@@ -51,6 +48,7 @@ const bla = () => {
 //   }
 // }, state))
 
-// // setInterval(() => {
-// //   window.location.reload()
-// // }, 200)
+// // // setInterval(() => {
+// // //   window.location.reload()
+// // // }, 200)
+import { struct } from 'brisky-struct'
