@@ -1,7 +1,6 @@
 # builder-boy
 Build and watch es modules FAST -- builder boy has no options!
 
-it builds
 - imports / exports
 - inline browser builds
 - es5 + generators
