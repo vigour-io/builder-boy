@@ -70,7 +70,7 @@ build('./test/real/render.js', (err, result) => {
     return
   } else {
     cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.node)
+    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
   }
 })
 
