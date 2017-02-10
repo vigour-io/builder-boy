@@ -1,9 +1,18 @@
 import br from '../../../brisky-render'
+import hub from '../../../hub.js'
 
 const bla = require('./bla.json')
 
+const fs = require('fs')
+
+const state = hub({
+  hello: 'hello what?'
+})
+
+console.log(state)
+
 document.body.appendChild(br.render({
-  text: 'hello world',
+  text: { $: 'hello' },
   bla: {
     text: JSON.stringify(bla, false, 2),
     style: {
@@ -30,7 +39,7 @@ document.body.appendChild(br.render({
       console.log('do it!')
     }
   }
-}))
+}, state))
 
 // setInterval(() => {
 //   window.location.reload()
