@@ -75,7 +75,7 @@ var cnt = 0
 // })
 
 build('../phoenix/src/index.js', {
-  inline: [ '@vigour-io/play', 'brisky-render' ]
+  inline: [ '@vigour-io/play' ] //  'brisky-render'
 }, (err, result) => {
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
