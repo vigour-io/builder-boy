@@ -19,20 +19,28 @@ import { device, platform as blurf, version, browser } from 'vigour-ua/navigator
 
 // var blurfx = browser === 'chrome' && version > 10 ? 'hello' : 'bye'
 
-var blurfxx = (browser === 'blurf' && blurf === 10) || browser === 'chrome' || (browser === 'firefox' && version === 20) ? 'hello' : 'bye'
+// var blurfxx = (browser === 'blurf' && blurf === 10) || browser === 'chrome' || (browser === 'firefox' && version === 20) ? 'hello' : 'bye'
+
+// if ((browser === 'blurf' && blurf === 'poop') || browser === 'chrome' || (browser === 'firefox' && version === 20)) {
+//   if (device === 'phone' && version === 100) {
+//     // console.log('yo')
+//   }
+// } else {
+if (blurf === 'poop') {
+  // console.log('yo')
+} else if (browser === 'penis') {
+
+}
+// }
 
 // combinational --- need to check for &&
-
 // add if statement id and parse && if && do this
 // make browser + version
-
-
-function xx (device) {
-  if (device === x) {
-    console.log('xxx')
-  }
-}
-
+// function xx (device) {
+//   if (device === x) {
+//     // console.log('xxx')
+//   }
+// }
 // const xx = blurf === 'ios' ? 'yes' : 'no'
 // if (webview) {
 //   console.log('jur')
