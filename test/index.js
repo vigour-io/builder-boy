@@ -63,16 +63,16 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
-  // console.log('hello wtf....')
-  if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
-  }
-})
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//   }
+// })
 
 build('./test/simple/ua.js', (err, result) => {
   if (err) {

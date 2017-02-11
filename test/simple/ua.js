@@ -30,15 +30,18 @@ if (blurf === 'poop') {
   // console.log('yo')
 } else if (browser === 'penis') {
 
+} else {
+  if (device === 'phone') {
+
+  }
 }
 
 // var bla = blurf
-// if (typeof window === 'undefined') {
-//   bla.platform = 'node'
-// } else {
-//   bla(window.navigator.userAgent, exports)
-// }
-// }
+if (typeof window === 'undefined') {
+  bla.platform = 'node'
+} else {
+  bla(window.navigator.userAgent, exports)
+}
 
 // combinational --- need to check for &&
 // add if statement id and parse && if && do this
