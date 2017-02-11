@@ -80,7 +80,7 @@ build('./test/simple/ua.js', (err, result) => {
     return
   } else {
     cnt++
-    fs.writeFileSync(`./test/simple/dist/ua.js`, result.node)
+    fs.writeFileSync(`./test/simple/dist/gurk.js`, result.node)
   }
 })
 
