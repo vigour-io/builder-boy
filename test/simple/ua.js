@@ -2,12 +2,16 @@
 
 // const { platform, device: smurt } = require('vigour-ua/navigator')
 // const x = require('vigour-ua/navigator')
-// import y from 'vigour-ua/navigator'
+import y from 'vigour-ua/navigator'
 
-const { device, platform: yuzi } = require('vigour-ua/navigator')
+// const { device, platform: yuzi } = require('vigour-ua/navigator')
 
-if (device === 'poop' && yuzi === 'ios') {
-  console.log('dirty!')
+// if (device === 'poop' && yuzi === 'ios') {
+//   console.log('dirty!')
+// }
+
+if (y.device === 'yuzi') {
+  console.log('gurk')
 }
 
 // const x = 'hello'

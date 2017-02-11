@@ -63,16 +63,16 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
-  // console.log('hello wtf....')
-  if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
-  }
-})
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//   }
+// })
 
 // build('./test/simple/ua.js', (err, result) => {
 //   if (err) {
@@ -84,17 +84,17 @@ build('./test/real/render.js', (err, result) => {
 //   }
 // })
 
-// build('../phoenix/src/index.js', {
-//   inline: [ '@vigour-io/play' ] //  'brisky-render'
-// }, (err, result) => {
-//   if (err) {
-//     // console.log('.....ERROR', !!result, cnt, err)
-//     return
-//   } else {
-//     cnt++
-//     fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
-//   }
-// })
+build('../phoenix/src/index.js', {
+  inline: [ '@vigour-io/play', 'brisky-render' ] //  'brisky-render'
+}, (err, result) => {
+  if (err) {
+    // console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    cnt++
+    fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
+  }
+})
 
 // '../hub.js/src/index.js'
 // build('./test/real/index.js', (err, result) => {
