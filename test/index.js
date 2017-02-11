@@ -63,14 +63,26 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
-  // console.log('hello wtf....')
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//   }
+// })
+
+build('../phoenix/src/index.js', {
+  inline: [ 'play', 'brisky-render' ]
+}, (err, result) => {
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
     cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
   }
 })
 

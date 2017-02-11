@@ -1,7 +1,7 @@
 {
   "name": "builder-boy",
   "description": "Build and watch es modules FAST",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "main": "lib/index.js",
   "scripts": {
     "test": "node test/index.js",
@@ -38,10 +38,13 @@
     "brisky-struct": "unstable",
     "browser-resolve": "^1.11.2",
     "browserify": "^14.0.0",
+    "buble": "^0.15.2",
     "chalk": "^1.1.3",
     "chokidar": "^1.6.1",
     "detect-import-require": "^2.0.0",
     "is-builtin-module": "^1.0.0",
+    "regenerator": "^0.9.5",
+    "regenerator-runtime": "^0.10.1",
     "resolve": "^1.2.0",
     "string-hash": "^1.1.1"
   },
