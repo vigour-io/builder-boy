@@ -5,15 +5,8 @@ const file = process.argv[2]
 const dest = process.argv[3]
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
 const chalk = require('chalk')
-const { exec } = require('child_process')
 const fs = require('fs')
 const cwd = process.cwd()
-
-var i = process.argv.indexOf('-e')
-if (i === -1) i = process.argv.indexOf('--exec')
-if (i !== -1) var execScript = process.argv[1 + 1]
-
-
 
 const write = (dest, code, type) => new Promise((resolve, reject) => {
   if (!isAbsolute(dest)) dest = join(cwd, dest)
@@ -46,12 +39,7 @@ build(file, (err, code) => {
         write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
         write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
       ]).then(() => {
-        if (execScript) {
-          const child = exec(execScript)
-          child.stdout.pipe(process.stdout)
-          child.stderr.pipe(process.stderr)
-          if (!watch) child.on('close', () => process.exit())
-        } else if (!watch) {
+        if (!watch) {
           process.exit()
         }
       })
