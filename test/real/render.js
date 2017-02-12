@@ -7,9 +7,9 @@ console.log(exotic)
 
 // // const fs = require('fs')
 
-const state = hub({
+const state = {
   hello: 'hello what?'
-})
+}
 
 // const state = {
 //   hello: 'HELLO!1'

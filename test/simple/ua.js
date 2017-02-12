@@ -1,28 +1,31 @@
-import { device, platform as blurf } from 'vigour-ua/navigator'
-// const { platform, device: smurt } = require('vigour-ua/navigator')
+// import { device, platform as blurf, version, browser } from 'vigour-ua/navigator'
+
+const { platform, device: smurt, version } = require('vigour-ua/navigator')
 // const x = require('vigour-ua/navigator')
 // import y from 'vigour-ua/navigator'
 
-// // also with require ofc...
-if (device === 'phone') {
-  console.log('yo phone!')
-} else if (device === 'tv') {
-  console.log('tv!')
-} else {
-  console.log('dirtbag')
+// if (
+//   (smurt === 'bla' && version > 10) ||
+//   (
+//     (smurt === 'blats' && version < 5) ||
+//     version > 10) ||
+//   (smurt === 'bla' && (version > 5 && platform === 'blux' || (platform === 'gurk' && version > 100)))
+// ) {
+
+// }
+
+if (
+  x === true &&
+  (smurt === 'bla' && version > 10) ||
+  smurt === 'turd' ||
+  smurt === 'bla' && (platform === 'ios' || version < 5)
+) {
+
 }
 
-// const xx = blurf === 'ios' ? 'yes' : 'no'
+// result has to be
+
+[
 
 
-// if (webview) {
-//   console.log('jur')
-// }
-
-// var shur = {
-//   style: {
-//     color: device === 'tv' ? 'blue' : 'red'
-//   }
-// }
-
-// console.log(shur, xx)
+]
