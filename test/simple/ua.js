@@ -15,6 +15,7 @@ const { platform, device: smurt, version } = require('vigour-ua/navigator')
 // }
 
 if (
+  x === true &&
   (smurt === 'bla' && version > 10) ||
   smurt === 'turd' ||
   smurt === 'bla' && (platform === 'ios' || version < 5)
