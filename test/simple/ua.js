@@ -1,46 +1,44 @@
-// import { device, platform as blurf, version, browser } from 'vigour-ua/navigator'
+// src: http://shouldiprefix.com
+import ua from 'vigour-ua/navigator'
 
-const { a, b, x, y, z, d } = require('vigour-ua/navigator')
-// const x = require('vigour-ua/navigator')
-// import y from 'vigour-ua/navigator'
+const prefix = {}
 
-// if (
-//   (smurt === 'bla' && version > 10) ||
-//   (
-//     (smurt === 'blats' && version < 5) ||
-//     version > 10) ||
-//   (smurt === 'bla' && (version > 5 && platform === 'blux' || (platform === 'gurk' && version > 100)))
-// ) {
+if (ua.prefix === 'moz') {
+  prefix.appearance = 'mozAppearance'
+} else if (
+  ua.prefix === 'webkit' ||
+  ua.browser === 'ie' ||
+  ua.browser === 'edge'
+) {
+  prefix.appearance = 'webkitAppearance'
+  // if (ua.browser === 'penis') {
 
-// }
-
-// if (
-//   x === true &&
-//   (smurt === 'bla' && version > 10) ||
-//   smurt === 'turd' ||
-//   smurt === 'bla' && (platform !== 'ios' || version < 5)
-// ) {
-//   if (platform === 'tv') {
-
-//   } else {
-//     // will become platform !== tv || version =< 1 || version >= -100
-//   }
-// } else {
-
-// }
-
-if (z === true || ((a === true || b === true) && x < 10)) {
-
-} else {
-
+  // }
 }
 
-// if (platform !== 'ios') {
-//   if (platform === 'tv' && version > 10) {
+if (ua.browser === 'chrome' || ua.browser === 'safari') {
+  prefix.filter = 'webkitFilter'
+}
 
-//   } else {
-//     // will become platform !== tv || version =< 1 || version >= -100
-//   }
-// }
+if (ua.platform === 'ios' || ua.browser === 'safari') {
+  prefix.flex = 'webkitFlex'
+} else if (ua.browser === 'ie') {
+  prefix.flex = 'msFlex'
+  // if (ua.version === 10) {
+  //   prefix.order = 'msFlexOrder'
+  // }
+}
 
-// result has to be
+if (
+  (ua.browser === 'chrome' && ua.version < 36) ||
+  (ua.browser === 'safari') ||
+  (ua.platform === 'ios' && ua.version < 9.2) ||
+  (ua.prefix === 'moz' && ua.browser === 'gurky') ||
+  (ua.platform === 'android' && ua.version <= 4.5)// 4.4.4
+) {
+  prefix.transform = 'webkitTransform'
+} else {
+  prefix.transform = 'transform'
+}
+
+export default prefix
