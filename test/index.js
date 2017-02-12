@@ -74,27 +74,27 @@ var cnt = 0
 //   }
 // })
 
-// build('./test/simple/ua.js', (err, result) => {
-//   if (err) {
-//     // console.log('.....ERROR', !!result, cnt, err)
-//     return
-//   } else {
-//     cnt++
-//     fs.writeFileSync(`./test/simple/dist/gurk.js`, result.node)
-//   }
-// })
-
-build('../phoenix/src/index.js', {
-  inline: [ '@vigour-io/play', 'brisky-render' ] //  'brisky-render'
-}, (err, result) => {
+build('./test/simple/ua.js', (err, result) => {
   if (err) {
     // console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
     cnt++
-    fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
+    fs.writeFileSync(`./test/simple/dist/gurk.js`, result.node)
   }
 })
+
+// build('../phoenix/src/index.js', {
+//   inline: [ '@vigour-io/play', 'brisky-render' ] //  'brisky-render'
+// }, (err, result) => {
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
+//   }
+// })
 
 // '../hub.js/src/index.js'
 // build('./test/real/index.js', (err, result) => {
