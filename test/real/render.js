@@ -19,16 +19,23 @@
 
 // console.log('hello')
 
-
-const blax = function * () {
-  yield 'poop'
-  yield 'yuz'
+async function x (x) {
+  if (x) return await (x - 1)
+  return 0
 }
 
-const it = blax()
-for (var i of it) {
-  console.log('?', i)
-}
+x().then(() => {
+  console.log('lullz')
+})
+// const blax = function * () {
+//   yield 'poop'
+//   yield 'yuz'
+// }
+
+// const it = blax()
+// for (var i of it) {
+//   console.log('?', i)
+// }
 // console.log(x())
 // var blax = new Promise()
 // fetch('http://google.com')
