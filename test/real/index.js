@@ -1,7 +1,3 @@
-const parent = () => {
-
-}
-// add option for resolve
-const path = (t, real) => {
-  var parent = t
-}
+// import { struct } from 'brisky-struct'
+import h from 'hub.js'
+// console.log(struct)
