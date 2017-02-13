@@ -74,15 +74,15 @@ var cnt = 0
 //   }
 // })
 
-build('./test/simple/ua.js', (err, result) => {
-  if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/simple/dist/gurk.js`, result.node)
-  }
-})
+// build('./test/simple/ua.js', (err, result) => {
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/simple/dist/gurk.js`, result.node)
+//   }
+// })
 
 // build('../phoenix/src/index.js', {
 //   inline: [ '@vigour-io/play', 'brisky-render' ] //  'brisky-render'
@@ -97,24 +97,24 @@ build('./test/simple/ua.js', (err, result) => {
 // })
 
 // '../hub.js/src/index.js'
-// build('./test/real/index.js', (err, result) => {
-//   console.log('hello wtf....')
-//   if (err) {
-//     console.log('.....ERROR', !!result, cnt, err)
-//     return
-//   } else {
-//     console.log(result.node)
-//     cnt++
-//     fs.writeFileSync(`./test/real/dist/1.js`, result.node)
-//     // console.log('---------------------------------------------')
-//     // try {
-//     //   require(`./real/dist/${cnt}.js`)
-//     // } catch (e) {
-//     //   console.log('lulllzors', e)
-//     // }
-//     // console.log('---------------------------------------------')
-//   }
-// })
+build('./test/real/index.js', (err, result) => {
+  console.log('hello wtf....')
+  if (err) {
+    console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    console.log(result.node)
+    cnt++
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+    console.log('---------------------------------------------')
+    try {
+      require(`./real/dist/${cnt}.js`)
+    } catch (e) {
+      console.log('lulllzors', e)
+    }
+    console.log('---------------------------------------------')
+  }
+})
 
 // build('./test/real/index.js', (err, result) => {
 //   console.log('hello wtf....')
