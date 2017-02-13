@@ -2,9 +2,13 @@
 // import h from 'hub.js'
 // // console.log(struct)
 // var bla = `x`
-var bla = function * () {
+// var bla = function * () {
 
-}
+// }
+// var promise = new Promise()
+const bla = require('node-fetch')
+fetch('http://google.com', () => {})
+
 // let x = 1
 // const y = 2
 // var bla = () => {}
