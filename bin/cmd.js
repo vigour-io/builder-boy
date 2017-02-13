@@ -4,6 +4,7 @@ const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
+const raw = ~process.argv.indexOf('-r') || ~process.argv.indexOf('--raw')
 const chalk = require('chalk')
 const fs = require('fs')
 const cwd = process.cwd()
@@ -27,7 +28,7 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
-build(file, (err, code) => {
+build(file, { raw }, (err, code) => {
   if (err) {
     if (!err.file) {
       console.log(err)
