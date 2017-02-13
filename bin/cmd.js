@@ -28,7 +28,7 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
-build(file, { raw }, (err, code) => {
+build(file, { raw, nowatch: !watch }, (err, code) => {
   if (err) {
     if (!err.file) {
       console.log(err)
@@ -40,9 +40,7 @@ build(file, { raw }, (err, code) => {
         write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
         write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
       ]).then(() => {
-        if (!watch) {
-          process.exit()
-        }
+        if (!watch) process.exit()
       })
     }
   }
