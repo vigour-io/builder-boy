@@ -31,7 +31,11 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
 build(file, { raw, nowatch: !watch }, (err, code) => {
   if (err) {
     if (!err.file) {
-      console.log(err)
+      if (err.message.indexOf('ENOENT') > -1) {
+        console.log(`   ${chalk.red('no such file or directory')} "${err.message.split('\'')[1]}"`)
+      } else {
+        console.log(err)
+      }
     }
   } else {
     if (dest) {
