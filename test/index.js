@@ -63,16 +63,16 @@ var cnt = 0
 // })
 
 // build file as input
-build('./test/real/render.js', (err, result) => {
-  // console.log('hello wtf....')
-  if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
-  }
-})
+// build('./test/real/render.js', (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//   }
+// })
 
 // build('./test/simple/ua.js', (err, result) => {
 //   if (err) {
@@ -97,24 +97,24 @@ build('./test/real/render.js', (err, result) => {
 // })
 
 // '../hub.js/src/index.js'
-// build('./test/real/index.js', (err, result) => {
-//   console.log('hello wtf....')
-//   if (err) {
-//     console.log('.....ERROR', !!result, cnt, err)
-//     return
-//   } else {
-//     console.log(result.node)
-//     cnt++
-//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-//     console.log('---------------------------------------------')
-//     try {
-//       require(`./real/dist/${cnt}.js`)
-//     } catch (e) {
-//       console.log('lulllzors', e)
-//     }
-//     console.log('---------------------------------------------')
-//   }
-// })
+build('./test/real/index.js', (err, result) => {
+  console.log('hello wtf....')
+  if (err) {
+    console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    console.log(result.node)
+    cnt++
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+    console.log('---------------------------------------------')
+    try {
+      require(`./real/dist/${cnt}.js`)
+    } catch (e) {
+      console.log('lulllzors', e)
+    }
+    console.log('---------------------------------------------')
+  }
+})
 
 // build('./test/real/index.js', (err, result) => {
 //   console.log('hello wtf....')
