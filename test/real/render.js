@@ -1,6 +1,7 @@
 import br from 'brisky-render'
+
 // // import hub from '../../../hub.js'
-// const bla = require('./bla.json')
+const bla = require('./bla.json')
 
 // // const exotic = require('./exotic')
 // // console.log(exotic)
@@ -19,14 +20,14 @@ import br from 'brisky-render'
 
 // console.log('hello')
 
-// async function x (x) {
-//   if (x) return await x - 1
-//   return 0
-// }
+async function x (x) {
+  if (x) return await x - 1
+  return 0
+}
 
-// x().then(() => {
-//   console.log('lullz')
-// })
+x().then(() => {
+  console.log('lullz')
+})
 // const blax = function * () {
 //   yield 'poop'
 //   yield 'yuz'
@@ -44,37 +45,37 @@ import br from 'brisky-render'
 //   hello: 'HELLO!1'
 // }
 
-// // // // console.log(state
+// // // // // console.log(state
 
-// document.body.appendChild(br.render({
-//   text: { $: 'hello' },
-//   bla: {
-//     text: JSON.stringify(bla, false, 2),
-//     style: {
-//       marginTop: '15px',
-//       fontSize: '20px'
-//     }
-//   },
-//   style: {
-//     color: 'rgb(20, 20, 20)',
-//     padding: '15px',
-//     margin: '0 auto',
-//     marginTop: '150px',
-//     background: '#ee',
-//     borderRadius: '15px',
-//     transform: {
-//       rotate: 0
-//     },
-//     fontSize: '50px',
-//     textAlign: 'center',
-//     fontFamily: 'helvetica'
-//   },
-//   on: {
-//     click: () => {
-//       console.log('do it!')
-//     }
-//   }
-// }, state))
+document.body.appendChild(br.render({
+  text: { $: 'hello' },
+  bla: {
+    text: JSON.stringify(bla, false, 2),
+    style: {
+      marginTop: '15px',
+      fontSize: '20px'
+    }
+  },
+  style: {
+    color: 'rgb(20, 20, 20)',
+    padding: '15px',
+    margin: '0 auto',
+    marginTop: '150px',
+    background: '#ee',
+    borderRadius: '15px',
+    transform: {
+      rotate: 0
+    },
+    fontSize: '50px',
+    textAlign: 'center',
+    fontFamily: 'helvetica'
+  },
+  on: {
+    click: () => {
+      console.log('do it!')
+    }
+  }
+}, bla))
 
 // // // setInterval(() => {
 // // //   window.location.reload()
