@@ -1,4 +1,4 @@
-// import br from 'brisky-render'
+import br from 'brisky-render'
 // // import hub from '../../../hub.js'
 // const bla = require('./bla.json')
 
@@ -19,14 +19,14 @@
 
 // console.log('hello')
 
-async function x (x) {
-  if (x) return await (x - 1)
-  return 0
-}
+// async function x (x) {
+//   if (x) return await x - 1
+//   return 0
+// }
 
-x().then(() => {
-  console.log('lullz')
-})
+// x().then(() => {
+//   console.log('lullz')
+// })
 // const blax = function * () {
 //   yield 'poop'
 //   yield 'yuz'
