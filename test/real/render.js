@@ -1,19 +1,29 @@
 import br from 'brisky-render'
-import hub from '../../../hub.js'
+// import hub from '../../../hub.js'
 const bla = require('./bla.json')
 
-const exotic = require('./exotic')
-console.log(exotic)
+// const exotic = require('./exotic')
+// console.log(exotic)
 
 // // const fs = require('fs')
 
-const state = {
-  hello: 'hello what?'
-}
-
 // const state = {
-//   hello: 'HELLO!1'
+//   hello: 'hello what?'
 // }
+
+// const x = new Promise((resolve, reject) => {
+
+// })
+
+console.log('hello')
+
+// console.log(x())
+// var blax = new Promise()
+// fetch('http://google.com')
+
+const state = {
+  hello: 'HELLO!1'
+}
 
 // // // console.log(state
 
@@ -47,7 +57,7 @@ document.body.appendChild(br.render({
   }
 }, state))
 
-// // // setInterval(() => {
-// // //   window.location.reload()
-// // // }, 200)
+// // setInterval(() => {
+// //   window.location.reload()
+// // }, 200)
 // import { struct } from 'brisky-struct'

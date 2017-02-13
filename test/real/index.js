@@ -6,7 +6,7 @@
 
 // }
 // var promise = new Promise()
-const bla = require('node-fetch')
+// const bla = require('node-fetch')
 fetch('http://google.com', () => {})
 
 // let x = 1
