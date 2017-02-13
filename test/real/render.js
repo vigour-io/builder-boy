@@ -11,9 +11,9 @@ const bla = require('./bla.json')
 //   hello: 'hello what?'
 // }
 
-// const x = new Promise((resolve, reject) => {
+const x = new Promise((resolve, reject) => {
 
-// })
+})
 
 console.log('hello')
 
