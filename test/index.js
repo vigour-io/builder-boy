@@ -111,7 +111,7 @@ build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] 
     if (result.ua.node) {
       console.log('gets them builds')
       for (var i in result.ua.node.builds) {
-        console.log(i)
+        // console.log(i)
         fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
       }
 

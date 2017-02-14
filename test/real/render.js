@@ -58,7 +58,7 @@ if (nav.device === 'phone') {
 module.exports = br.render({
   text: { $: 'hello' },
   ua: {
-    style: { fontSize: '15px' },
+    style: { fontSize: '25px' },
     text: JSON.stringify(nav, false, 2)
   },
   bla: {
@@ -69,15 +69,14 @@ module.exports = br.render({
     }
   },
   style: {
-
     color: nav.browser === 'ie' ? 'blue' : nav.device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
     // padding: webview === 'ploy-native' ? '15px' : '30px',
     margin: '0 auto',
     marginTop: '150px',
-    background: nav.device === 'tablet' ? 'blue' : 'pink',
+    // background: nav.device === 'tablet' ? 'blue' : 'pink',
     borderRadius: '15px',
     transform: { rotate: 0 },
-    fontSize: nav.browser === 'firefox' ? '250px' : '50px',
+    // fontSize: nav.browser === 'firefox' ? '250px' : '50px',
     textAlign: 'center',
     fontFamily: 'helvetica'
   },
