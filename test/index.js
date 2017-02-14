@@ -19,8 +19,13 @@ var cnt = 0
 //   }
 // })
 
-build({ 'test/simple/bla.js': { virtual: true, code: 'console.log("dicks!")' } }, (err, result) => {
-  console.log('??????????')
+build({
+  'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
+  'flabber': { virtual: true, code: 'module.exports="flups"' }
+}, (err, result) => {
+  console.log('---->??????????')
+  console.log(result.node)
+  console.log('????')
   if (err) {
     console.log('error', err)
     return
