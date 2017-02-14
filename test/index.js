@@ -97,13 +97,13 @@ build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] 
       const logUa = (id, input) => {
         // console.log('RESULT>', id)
         if (!id) {
-          console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device)
+          console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview)
         } else {
           for (var i in result.ua.node.val) {
             const r = result.ua.node.val[i]
             if (r.id === id) {
-              console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device,
-                chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device)
+              console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview,
+                chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device, r.ua.webview)
               // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
               break
             }
@@ -117,7 +117,6 @@ build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] 
       uas.forEach(val => {
         logUa(select(val), val)
       })
-
     }
 
     // cnt++
