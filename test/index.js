@@ -64,12 +64,19 @@ var cnt = 0
 
 // build file as input
 // { raw: true }
-build('./test/real/render.js', (err, result) => {
+build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] }, (err, result) => {
   // console.log('hello wtf....')
   if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
+    console.log('.....ERROR', !!result, cnt, err)
     return
   } else {
+    if (result.ua.node) {
+      console.log('gets them builds')
+      for (var i in result.ua.node.builds) {
+        fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
+      }
+    }
+
     cnt++
     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
   }
@@ -86,14 +93,14 @@ build('./test/real/render.js', (err, result) => {
 // })
 
 // build('../phoenix/src/index.js', {
-//   inline: [ '@vigour-io/play', 'brisky-render' ] //  'brisky-render'
+//   inline: [ '@vigour-io/play', 'brisky-render' ]
 // }, (err, result) => {
 //   if (err) {
 //     // console.log('.....ERROR', !!result, cnt, err)
 //     return
 //   } else {
 //     cnt++
-//     fs.writeFileSync(`./test/real/dist/phoenix.js`, result.node)
+//     fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
 //   }
 // })
 
