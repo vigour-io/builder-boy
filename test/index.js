@@ -19,24 +19,24 @@ var cnt = 0
 //   }
 // })
 
-// build('../brisky-struct/src/index.js', (err, result) => {
-//   if (err) {
-//     // console.log('.....ERROR', !!result, cnt, err)
-//     return
-//   } else {
-//     cnt++
-//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-//
-//     console.log('---------------------------------------------')
-//     try {
-//       console.log(require(`./real/dist/${cnt}.js`))
-//     } catch (e) {
-//       console.log('lulllzors', e)
-//     }
-//     console.log('---------------------------------------------')
-//   // })
-//   }
-// })
+build('../brisky-struct/src/index.js', (err, result) => {
+  if (err) {
+    // console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    cnt++
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+
+    console.log('---------------------------------------------')
+    try {
+      console.log(require(`./real/dist/${cnt}.js`))
+    } catch (e) {
+      console.log('lulllzors', e)
+    }
+    console.log('---------------------------------------------')
+  // })
+  }
+})
 
 // build file as input
 // build('./test/real/render.js', (err, result) => {
@@ -102,60 +102,60 @@ http.createServer((req, res) => {
 }).listen(3030)
 
 // { raw: true }
-build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] }, (err, result) => {
-  // console.log('hello wtf....')
-  if (err) {
-    console.log('.....ERROR', !!result, cnt, err)
-    return
-  } else {
-    if (result.ua.node) {
-      console.log('gets them builds')
-      for (var i in result.ua.node.builds) {
-        // console.log(i)
-        fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
-      }
+// build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] }, (err, result) => {
+//   // console.log('hello wtf....')
+//   if (err) {
+//     console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     if (result.ua.node) {
+//       console.log('gets them builds')
+//       for (var i in result.ua.node.builds) {
+//         // console.log(i)
+//         fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
+//       }
 
-      const logUa = (id, input) => {
-        // console.log('RESULT>', id)
-        if (!id) {
-          console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview)
-        } else {
-          for (var i in result.ua.node.val) {
-            const r = result.ua.node.val[i]
-            if (r.id === id) {
-              console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview,
-                chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device, r.ua.webview)
-              // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
-              break
-            }
-          }
-        }
-      }
+//       const logUa = (id, input) => {
+//         // console.log('RESULT>', id)
+//         if (!id) {
+//           console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview)
+//         } else {
+//           for (var i in result.ua.node.val) {
+//             const r = result.ua.node.val[i]
+//             if (r.id === id) {
+//               console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview,
+//                 chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device, r.ua.webview)
+//               // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
+//               break
+//             }
+//           }
+//         }
+//       }
 
-      fs.writeFileSync(`./test/real/dist/select.js`, result.ua.node.select)
-      const select = require(`./real/dist/select.js`)
+//       fs.writeFileSync(`./test/real/dist/select.js`, result.ua.node.select)
+//       const select = require(`./real/dist/select.js`)
 
-      const nasty = {}
-      for (var i in result.ua.node.builds) {
-        nasty[i] = require(`./real/dist/${i}.js`)
-      }
+//       const nasty = {}
+//       for (var i in result.ua.node.builds) {
+//         nasty[i] = require(`./real/dist/${i}.js`)
+//       }
 
-      bla = function (ua) {
-        return nasty[select(ua)]
-      }
+//       bla = function (ua) {
+//         return nasty[select(ua)]
+//       }
 
-      // uas.forEach(val => {
-      //   logUa(select(val), val)
-      // })
+//       // uas.forEach(val => {
+//       //   logUa(select(val), val)
+//       // })
 
-      // console.log(result.ua.node.val.filter(val => val.ua.webview))
+//       // console.log(result.ua.node.val.filter(val => val.ua.webview))
 
-    }
+//     }
 
-    // cnt++
-    // fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
-  }
-})
+//     // cnt++
+//     // fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+//   }
+// })
 
 // build('./test/simple/ua.js', (err, result) => {
 //   if (err) {
