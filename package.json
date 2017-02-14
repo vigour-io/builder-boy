@@ -44,6 +44,7 @@
     "detect-import-require": "^2.0.0",
     "is-builtin-module": "^1.0.0",
     "node-fetch": "^1.6.3",
+    "parse-element": "^2.0.5",
     "promise-polyfill": "^6.0.2",
     "regenerator": "^0.9.5",
     "regenerator-runtime": "^0.10.1",

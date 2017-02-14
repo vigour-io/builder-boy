@@ -1,5 +1,5 @@
 import br from 'brisky-render'
-import { device, webview } from 'vigour-ua/navigator'
+import nav from 'vigour-ua/navigator'
 // // import hub from '../../../hub.js'
 const bla = require('./bla.json')
 
@@ -47,8 +47,20 @@ const bla = require('./bla.json')
 
 // // // // // console.log(state
 
-document.body.appendChild(br.render({
+if (nav.device === 'tablet') {
+  console.log('lulllz')
+}
+
+if (nav.device === 'phone') {
+  console.log('dirt')
+}
+
+module.exports = br.render({
   text: { $: 'hello' },
+  ua: {
+    style: { fontSize: '15px' },
+    text: JSON.stringify(nav, false, 2)
+  },
   bla: {
     text: JSON.stringify(bla, false, 2),
     style: {
@@ -57,14 +69,15 @@ document.body.appendChild(br.render({
     }
   },
   style: {
-    // color: device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
+
+    color: nav.browser === 'ie' ? 'blue' : nav.device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
     // padding: webview === 'ploy-native' ? '15px' : '30px',
     margin: '0 auto',
     marginTop: '150px',
-    background: '#ee',
+    background: nav.device === 'tablet' ? 'blue' : 'pink',
     borderRadius: '15px',
     transform: { rotate: 0 },
-    fontSize: '50px',
+    fontSize: nav.browser === 'firefox' ? '250px' : '50px',
     textAlign: 'center',
     fontFamily: 'helvetica'
   },
@@ -73,7 +86,7 @@ document.body.appendChild(br.render({
       console.log('do it!')
     }
   }
-}, bla))
+}, bla)
 
 // // // setInterval(() => {
 // // //   window.location.reload()
