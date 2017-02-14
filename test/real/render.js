@@ -1,5 +1,5 @@
 import br from 'brisky-render'
-
+import { device } from 'vigour-ua/navigator'
 // // import hub from '../../../hub.js'
 const bla = require('./bla.json')
 
@@ -57,7 +57,7 @@ document.body.appendChild(br.render({
     }
   },
   style: {
-    color: 'rgb(20, 20, 20)',
+    color: device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
     padding: '15px',
     margin: '0 auto',
     marginTop: '150px',

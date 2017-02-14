@@ -1,5 +1,6 @@
 const build = require('../')
 const fs = require('fs')
+const chalk = require('chalk')
 
 var cnt = 0
 // build('test/simple/bla.js', (err, result) => {
@@ -62,6 +63,23 @@ var cnt = 0
 //   }
 // })
 
+const list = require('vigour-ua/test/common/useragents/list')
+const ua = require('vigour-ua')
+const uas = []
+for (var i in list) {
+  list[i].forEach(val => {
+    uas.push(ua(val))
+  })
+}
+
+uas.push({
+  browser: 'dirtyyuzi',
+  platform: 'android',
+  version: 10,
+  prefix: 'blurf',
+  device: 'phone'
+})
+
 // build file as input
 // { raw: true }
 build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] }, (err, result) => {
@@ -75,10 +93,35 @@ build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] 
       for (var i in result.ua.node.builds) {
         fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
       }
+
+      const logUa = (id, input) => {
+        // console.log('RESULT>', id)
+        if (!id) {
+          console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device)
+        } else {
+          for (var i in result.ua.node.val) {
+            const r = result.ua.node.val[i]
+            if (r.id === id) {
+              console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device,
+                chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device)
+              // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
+              break
+            }
+          }
+        }
+      }
+
+      fs.writeFileSync(`./test/real/dist/select.js`, result.ua.node.select)
+      const select = require(`./real/dist/select.js`)
+
+      uas.forEach(val => {
+        logUa(select(val), val)
+      })
+
     }
 
-    cnt++
-    fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
+    // cnt++
+    // fs.writeFileSync(`./test/real/dist/blarx.js`, result.inlineBrowser)
   }
 })
 
