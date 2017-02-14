@@ -57,8 +57,8 @@ document.body.appendChild(br.render({
     }
   },
   style: {
-    color: device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
-    padding: webview === 'ploy-native' ? '15px' : '30px',
+    // color: device === 'phone' ? 'rgb(20, 20, 20)' : 'yellow',
+    // padding: webview === 'ploy-native' ? '15px' : '30px',
     margin: '0 auto',
     marginTop: '150px',
     background: '#ee',

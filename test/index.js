@@ -94,28 +94,28 @@ build('./test/real/render.js', { inline: [ '@vigour-io/play', 'brisky-render' ] 
         fs.writeFileSync(`./test/real/dist/${i}.js`, result.ua.node.builds[i])
       }
 
-      const logUa = (id, input) => {
-        // console.log('RESULT>', id)
-        if (!id) {
-          console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview)
-        } else {
-          for (var i in result.ua.node.val) {
-            const r = result.ua.node.val[i]
-            if (r.id === id) {
-              console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview,
-                chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device, r.ua.webview)
-              // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
-              break
-            }
-          }
-        }
-      }
+      // const logUa = (id, input) => {
+      //   // console.log('RESULT>', id)
+      //   if (!id) {
+      //     console.log(chalk.red('BAD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview)
+      //   } else {
+      //     for (var i in result.ua.node.val) {
+      //       const r = result.ua.node.val[i]
+      //       if (r.id === id) {
+      //         console.log(chalk.green('GOOD --> ua:'), input.browser, input.version, input.platform, input.device, input.webview,
+      //           chalk.white('match:'), r.ua.browser, r.ua.version, r.ua.platform, r.ua.device, r.ua.webview)
+      //         // console.log('GOOD --> ua:', r.ua.browser, r.ua.version, r.ua.platform)
+      //         break
+      //       }
+      //     }
+      //   }
+      // }
 
       fs.writeFileSync(`./test/real/dist/select.js`, result.ua.node.select)
       const select = require(`./real/dist/select.js`)
 
       uas.forEach(val => {
-        logUa(select(val), val)
+        // logUa(select(val), val)
       })
     }
 
