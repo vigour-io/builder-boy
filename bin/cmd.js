@@ -4,6 +4,7 @@ const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
+const raw = ~process.argv.indexOf('-r') || ~process.argv.indexOf('--raw')
 const chalk = require('chalk')
 const fs = require('fs')
 const cwd = process.cwd()
@@ -27,10 +28,14 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
-build(file, (err, code) => {
+build(file, { raw, nowatch: !watch }, (err, code) => {
   if (err) {
     if (!err.file) {
-      console.log(err)
+      if (err.message.indexOf('ENOENT') > -1) {
+        console.log(`   ${chalk.red('no such file or directory')} "${err.message.split('\'')[1]}"`)
+      } else {
+        console.log(err)
+      }
     }
   } else {
     if (dest) {
@@ -39,9 +44,7 @@ build(file, (err, code) => {
         write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
         write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
       ]).then(() => {
-        if (!watch) {
-          process.exit()
-        }
+        if (!watch) process.exit()
       })
     }
   }

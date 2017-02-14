@@ -1,31 +1,53 @@
-// import { device, platform as blurf, version, browser } from 'vigour-ua/navigator'
+// src: http://shouldiprefix.com
+import ua from 'vigour-ua/navigator'
 
-const { platform, device: smurt, version } = require('vigour-ua/navigator')
-// const x = require('vigour-ua/navigator')
-// import y from 'vigour-ua/navigator'
+const prefix = {}
 
-// if (
-//   (smurt === 'bla' && version > 10) ||
-//   (
-//     (smurt === 'blats' && version < 5) ||
-//     version > 10) ||
-//   (smurt === 'bla' && (version > 5 && platform === 'blux' || (platform === 'gurk' && version > 100)))
+// if (ua.prefix === 'moz') {
+//   prefix.appearance = 'mozAppearance'
+// } else if (
+//   ua.prefix === 'webkit' ||
+//   ua.browser === 'ie' ||
+//   ua.browser === 'edge'
 // ) {
+//   prefix.appearance = 'webkitAppearance'
+//   // if (ua.browser === 'penis') {
 
+//   // }
 // }
 
-if (
-  x === true &&
-  (smurt === 'bla' && version > 10) ||
-  smurt === 'turd' ||
-  smurt === 'bla' && (platform === 'ios' || version < 5)
-) {
+// if (ua.browser === 'chrome' || ua.browser === 'safari') {
+//   prefix.filter = 'webkitFilter'
+// }
 
+// if (ua.platform === 'ios' || ua.browser === 'safari') {
+//   prefix.flex = 'webkitFlex'
+// }
+
+if (ua.browser === 'ie') {
+  prefix.order = 'msFlexOrder'
+  if (ua.version === 10) {
+    prefix.flex = 'msFlex'
+  } else {
+    if (ua.version > 10) {
+      console.log('haha')
+    }
+  }
+} else {
+  if (ua.webview === 'ploy-native') {
+    console.log('dirty!')
+  }
 }
 
-// result has to be
+// if (
+//   (ua.browser === 'chrome' && ua.version < 36) ||
+//   (ua.browser === 'safari') ||
+//   (ua.platform === 'ios' && ua.version < 9.2) ||
+//   (ua.platform === 'android' && ua.version <= 4.5)// 4.4.4
+// ) {
+//   prefix.transform = 'webkitTransform'
+// } else {
+//   prefix.transform = 'transform'
+// }
 
-[
-
-
-]
+export default prefix
