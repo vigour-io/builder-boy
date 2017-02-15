@@ -21,10 +21,10 @@ var cnt = 0
 
 build({
   'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
-  'flabber': { virtual: true, code: 'module.exports="flups"' }
+  'flabber': { virtual: true, code: 'module.exports=process.env.LOGNAME' }
 }, (err, result) => {
   console.log('---->??????????')
-  console.log(result.node)
+  console.log(result.inlineBrowser)
   console.log('????')
   if (err) {
     console.log('error', err)
