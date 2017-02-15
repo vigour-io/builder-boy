@@ -51,7 +51,7 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
-build(file, { raw, nowatch: !watch, env, targets }, (err, code) => {
+build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) => {
   if (err) {
     if (!err.file) {
       if (err.message.indexOf('ENOENT') > -1) {
