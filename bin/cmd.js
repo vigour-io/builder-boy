@@ -5,6 +5,20 @@ const file = process.argv[2]
 const dest = process.argv[3]
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
 const raw = ~process.argv.indexOf('-r') || ~process.argv.indexOf('--raw')
+var env
+
+if (~process.argv.indexOf('-e') || ~process.argv.indexOf('--env')) {
+  env = {}
+  console.log(process.argv)
+  for (let i = 0, len = process.argv.length; i < len; i++) {
+    const arg = process.argv[i]
+    if (arg === '-e' || arg === '--env') {
+      const envArg = process.argv[i + 1].split('=')
+      env[envArg[0]] = envArg[1]
+    }
+  }
+}
+
 const chalk = require('chalk')
 const fs = require('fs')
 const cwd = process.cwd()
