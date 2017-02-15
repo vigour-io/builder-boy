@@ -19,24 +19,46 @@ var cnt = 0
 //   }
 // })
 
-build('../brisky-struct/src/index.js', (err, result) => {
+build({
+  'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
+  'flabber': { virtual: true, code: 'module.exports="flups"' }
+}, (err, result) => {
+  console.log('---->??????????')
+  console.log(result.node)
+  console.log('????')
   if (err) {
-    // console.log('.....ERROR', !!result, cnt, err)
+    console.log('error', err)
     return
-  } else {
-    cnt++
-    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-
-    console.log('---------------------------------------------')
-    try {
-      console.log(require(`./real/dist/${cnt}.js`))
-    } catch (e) {
-      console.log('lulllzors', e)
-    }
-    console.log('---------------------------------------------')
-  // })
+  }
+  cnt++
+  console.log(result.node)
+  fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result.node)
+  console.log('\n\n\ngo run script!!!!\n')
+  try {
+    require(`./simple/dist/${cnt}.js`)
+  } catch (e) {
+    console.log(e)
   }
 })
+
+// build('../brisky-struct/src/index.js', (err, result) => {
+//   if (err) {
+//     // console.log('.....ERROR', !!result, cnt, err)
+//     return
+//   } else {
+//     cnt++
+//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+
+//     console.log('---------------------------------------------')
+//     try {
+//       console.log(require(`./real/dist/${cnt}.js`))
+//     } catch (e) {
+//       console.log('lulllzors', e)
+//     }
+//     console.log('---------------------------------------------')
+//   // })
+//   }
+// })
 
 // build file as input
 // build('./test/real/render.js', (err, result) => {
