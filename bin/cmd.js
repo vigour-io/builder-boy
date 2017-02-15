@@ -5,16 +5,25 @@ const file = process.argv[2]
 const dest = process.argv[3]
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
 const raw = ~process.argv.indexOf('-r') || ~process.argv.indexOf('--raw')
-var env
+var env, targets
 
 if (~process.argv.indexOf('-e') || ~process.argv.indexOf('--env')) {
   env = {}
-  console.log(process.argv)
   for (let i = 0, len = process.argv.length; i < len; i++) {
     const arg = process.argv[i]
     if (arg === '-e' || arg === '--env') {
       const envArg = process.argv[i + 1].split('=')
       env[envArg[0]] = envArg[1]
+    }
+  }
+}
+
+if (~process.argv.indexOf('-t') || ~process.argv.indexOf('--target')) {
+  targets = []
+  for (let i = 0, len = process.argv.length; i < len; i++) {
+    const arg = process.argv[i]
+    if (arg === '-t' || arg === '--target') {
+      targets.push(process.argv[i + 1])
     }
   }
 }
@@ -42,7 +51,7 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
-build(file, { raw, nowatch: !watch }, (err, code) => {
+build(file, { raw, nowatch: !watch, env, targets }, (err, code) => {
   if (err) {
     if (!err.file) {
       if (err.message.indexOf('ENOENT') > -1) {
