@@ -63,9 +63,12 @@ build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) =>
   } else {
     if (dest) {
       Promise.all([
-        write(dest, code, 'node'),
-        write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
-        write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
+        (!targets || targets.includes('node')) &&
+          write(dest, code, 'node'),
+        (!targets || targets.includes('browser')) &&
+          write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
+        (!targets || targets.includes('inlineBrowser')) &&
+          write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inlineBrowser')
       ]).then(() => {
         if (!watch) process.exit()
       })
