@@ -21,7 +21,7 @@ var cnt = 0
 
 build({
   'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
-  'flabber': { virtual: true, code: 'module.exports=process.env.LOGNAME' }
+  'flabber': { virtual: true, code: 'module.exports=process.env.cookiemonster' }
 }, (err, result) => {
   console.log(result.inlineBrowser)
   if (err) {
