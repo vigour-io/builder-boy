@@ -19,24 +19,33 @@ var cnt = 0
 //   }
 // })
 
-build({
-  'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
-  'flabber': { virtual: true, code: 'module.exports=process.env.cookiemonster' }
-}, (err, result) => {
+// build({
+//   'flups': { virtual: true, code: `const a = require('flabber'); console.log(a)` },
+//   'flabber': { virtual: true, code: 'module.exports=process.env.cookiemonster' }
+// }, (err, result) => {
+//   console.log(result.inlineBrowser)
+//   if (err) {
+//     console.log('error', err)
+//     return
+//   }
+//   cnt++
+//   console.log(result.node)
+//   fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result.node)
+//   console.log('\n\n\ngo run script!!!!\n')
+//   try {
+//     require(`./simple/dist/${cnt}.js`)
+//   } catch (e) {
+//     console.log(e)
+//   }
+// })
+
+build('test/simple/fetch.js', (err, result) => {
   console.log(result.inlineBrowser)
   if (err) {
     console.log('error', err)
     return
   }
-  cnt++
-  console.log(result.node)
-  fs.writeFileSync(`./test/simple/dist/${cnt}.js`, result.node)
-  console.log('\n\n\ngo run script!!!!\n')
-  try {
-    require(`./simple/dist/${cnt}.js`)
-  } catch (e) {
-    console.log(e)
-  }
+  fs.writeFileSync(`./test/simple/dist/lurf.js`, result.inlineBrowser)
 })
 
 // build('../brisky-struct/src/index.js', (err, result) => {
