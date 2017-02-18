@@ -39,33 +39,33 @@ var cnt = 0
 //   }
 // })
 
-build('test/simple/fetch.js', (err, result) => {
-  console.log(result.inlineBrowser)
-  if (err) {
-    console.log('error', err)
-    return
-  }
-  fs.writeFileSync(`./test/simple/dist/lurf.js`, result.inlineBrowser)
-})
-
-// build('../brisky-struct/src/index.js', (err, result) => {
+// build('test/simple/fetch.js', (err, result) => {
+//   console.log(result.inlineBrowser)
 //   if (err) {
-//     // console.log('.....ERROR', !!result, cnt, err)
+//     console.log('error', err)
 //     return
-//   } else {
-//     cnt++
-//     fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
-
-//     console.log('---------------------------------------------')
-//     try {
-//       console.log(require(`./real/dist/${cnt}.js`))
-//     } catch (e) {
-//       console.log('lulllzors', e)
-//     }
-//     console.log('---------------------------------------------')
-//   // })
 //   }
+//   fs.writeFileSync(`./test/simple/dist/lurf.js`, result.inlineBrowser)
 // })
+
+build('../brisky-struct/src/index.js', (err, result) => {
+  if (err) {
+    // console.log('.....ERROR', !!result, cnt, err)
+    return
+  } else {
+    cnt++
+    fs.writeFileSync(`./test/real/dist/${cnt}.js`, result.node)
+
+    console.log('---------------------------------------------')
+    try {
+      console.log(require(`./real/dist/${cnt}.js`))
+    } catch (e) {
+      console.log('lulllzors', e)
+    }
+    console.log('---------------------------------------------')
+  // })
+  }
+})
 
 // build file as input
 // build('./test/real/render.js', (err, result) => {
