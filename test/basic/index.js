@@ -1,2 +1,3 @@
 const build = require('../')
-const fs = require('fs')
+const tape = require('tape') // or ava? its node only
+
