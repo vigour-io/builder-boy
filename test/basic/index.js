@@ -1,6 +1,5 @@
 const build = require('../../')
 const test = require('tape') // or ava? its node only
-// const boy = require('../../lib/boy')
 
 test('simple', t => {
   build('./test/basic/a.js', { inline: [ 'brisky-stamp' ] }, (err, results) => {
@@ -8,7 +7,7 @@ test('simple', t => {
     if (err) console.log('err', err)
     // console.log(results.node)
     // console.log(results.browser)
-    console.log(results.inline)
+    console.log(results.node)
   })
 
   // boy.add({
