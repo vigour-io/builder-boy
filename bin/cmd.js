@@ -51,6 +51,9 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
+// add pipe in option vs filepath -- simpler
+// for dest use -d flag else just pipe out pipe in out nice!
+
 build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) => {
   if (err) {
     if (!err.file) {

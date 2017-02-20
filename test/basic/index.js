@@ -4,6 +4,10 @@ const boy = require('../../lib/boy')
 
 test('simple', t => {
   console.log('?')
+  setTimeout(() => {
+    console.log('-------------')
+    console.log(boy.map(val => '---> ' + (val.result ? val.result.compute() : '----')))
+  }, 500)
   build('./test/basic/a.js', (err, results) => {
     console.log('-----', err)
   })
