@@ -11,7 +11,7 @@ test('simple', t => {
   build('./test/basic/a.js', (err, results) => {
     console.log('-------------')
     if (err) console.log('err', err)
-    console.log(results)
+    console.log('xxxx', results.node)
   })
 
   // boy.add({
