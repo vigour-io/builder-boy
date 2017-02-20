@@ -35,7 +35,7 @@
     "acorn": "^4.0.4",
     "acorn-es7-plugin": "^1.1.5",
     "async-to-gen": "^1.3.2",
-    "ava": "^0.18.2",
+    "find-pkg": "0.1.2",
     "brisky-stamp": "^4.0.0",
     "brisky-struct": "unstable",
     "buble": "^0.15.2",
