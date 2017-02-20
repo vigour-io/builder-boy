@@ -1,4 +1,3 @@
-// import fs from 'fs'
 // import { create } from 'brisky-struct'
 
 // want to see from first pkg
