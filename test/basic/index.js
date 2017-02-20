@@ -3,7 +3,7 @@ const test = require('tape') // or ava? its node only
 // const boy = require('../../lib/boy')
 
 test('simple', t => {
-  build('./test/basic/a.js', { inline: 'brisky-stamp' }, (err, results) => {
+  build('./test/basic/a.js', { inline: [ 'brisky-stamp' ] }, (err, results) => {
     console.log('-------------')
     if (err) console.log('err', err)
     // console.log(results.node)
