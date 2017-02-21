@@ -80,3 +80,16 @@ test('virtual', t => {
     }
   })
 })
+
+test('package', t => {
+  build('./test/pkg/index.js', {
+    nowatch: true,
+    targets: [ 'node' ],
+    inline: [ 'brisky-stamp' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      testBuild('ua', results.ua.builds, t)
+      t.end()
+    }
+  })
+})
