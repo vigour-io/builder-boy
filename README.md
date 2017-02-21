@@ -9,6 +9,8 @@ Build and watch es modules FAST
 
 - imports / exports
 - inline browser builds
-- es5 + generators
+- es5 + generators + fetch and async / await
+- branches based on user agents
+- virtual modules
 
 ![boy](https://media3.giphy.com/media/3o7TKDMPKsakcn9NU4/200.gif#4)
