@@ -1,5 +1,5 @@
 # builder-boy
-Build and watch es modules FAST -- builder boy has no options!
+Build and watch es modules FAST
 
 [![Build Status](https://travis-ci.org/vigour-io/builder-boy.svg?branch=master)](https://travis-ci.org/vigour-io/builder-boy)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
