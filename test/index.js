@@ -92,3 +92,15 @@ test('package - error', t => {
     }
   })
 })
+
+test('json', t => {
+  build('./test/json/index.js', {
+    nowatch: true,
+    targets: [ 'node' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      testBuild('json', results, t)
+      t.end()
+    }
+  })
+})
