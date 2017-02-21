@@ -6,8 +6,7 @@ const test = require('tape')
 test('external', t => {
   build('./test/external/a.js', { nowatch: false }, (err, results, boy) => {
     if (!err) {
-      console.log('hello')
-      t.end()
+      console.log('hello', results.inline.length)
     }
   })
 })
