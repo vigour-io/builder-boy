@@ -62,3 +62,21 @@ test('ua', t => {
     }
   })
 })
+
+test('virtual', t => {
+  build({
+    'virtual': {
+      virtual: true,
+      code: 'export default \'hahaha\''
+    }
+  }, { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      build('./test/virtual/index.js', { nowatch: true }, (err, results, boy) => {
+        if (!err) {
+          testBuild('virtual', results, t)
+          t.end()
+        }
+      })
+    }
+  })
+})
