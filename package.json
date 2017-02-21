@@ -25,10 +25,6 @@
     "builder"
   ],
   "nyc": {
-    "include": [
-      "dist/index.js"
-    ],
-    "sourceMap": true,
     "instrument": true
   },
   "dependencies": {
