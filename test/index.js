@@ -22,7 +22,10 @@ test('polyfill', t => {
 
 test('env - inherit', t => {
   process.env.beurs = 'ha!'
-  build('./test/env/index.js', { nowatch: true, targets: [ 'inline' ] }, (err, results, boy) => {
+  build('./test/env/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ]
+  }, (err, results, boy) => {
     if (!err) {
       t.same(results, {
         inline: '(function (global, process) { \nprocess.env = {"beurs":"ha!"};\nconsole.log(process.env.beurs)\n;\n })(window, {})'
@@ -33,11 +36,28 @@ test('env - inherit', t => {
 })
 
 test('env - override', t => {
-  build('./test/env/index.js', { nowatch: true, targets: [ 'inline' ], env: { beurs: true } }, (err, results, boy) => {
+  build('./test/env/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ],
+    env: { beurs: true }
+  }, (err, results, boy) => {
     if (!err) {
       t.same(results, {
         inline: '(function (global, process) { \nprocess.env = {"beurs":true};\nconsole.log(process.env.beurs)\n;\n })(window, {})'
       }, 'env')
+      t.end()
+    }
+  })
+})
+
+test('ua', t => {
+  build('./test/ua/index.js', {
+    nowatch: true,
+    targets: [ 'node' ],
+    inline: [ 'brisky-stamp' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      // console.log(results.node)
       t.end()
     }
   })
