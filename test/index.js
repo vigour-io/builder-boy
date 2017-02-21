@@ -110,6 +110,9 @@ test('error', t => {
     nowatch: true,
     targets: [ 'node' ]
   }, (err, results, boy) => {
-
+    if (err) {
+      t.equal(err.message, 'Cannot find module "hello" (1:0)')
+      t.end()
+    }
   })
 })
