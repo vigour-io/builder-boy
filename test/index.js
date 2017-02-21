@@ -1,6 +1,6 @@
 const build = require('../')
 const test = require('tape')
-const { testBuild, generate } = require('./util')
+const { testBuild, generate } = require('./util') //eslint-disable-line
 
 test('simple', t => {
   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
