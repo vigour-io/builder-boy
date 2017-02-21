@@ -104,3 +104,12 @@ test('json', t => {
     }
   })
 })
+
+test('error', t => {
+  build('./test/error/index.js', {
+    nowatch: true,
+    targets: [ 'node' ]
+  }, (err, results, boy) => {
+
+  })
+})
