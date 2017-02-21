@@ -1,6 +1,5 @@
 
 var $1069212539 = require('fs')
-var $1896185141 = require('promise-polyfill')
 var $3661716756 = require('regenerator-runtime/runtime')
 const $3877244887_blurf = () => {}
 

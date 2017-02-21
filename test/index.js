@@ -1,6 +1,6 @@
 const build = require('../')
 const test = require('tape')
-const { testBuild } = require('./util')
+const { testBuild, generate } = require('./util')
 
 test('simple', t => {
   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
@@ -53,11 +53,11 @@ test('env - override', t => {
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
-    inline: [ 'brisky-stamp' ]
+    targets: [ 'node' ]
+    // inline: [ 'brisky-stamp' ]
   }, (err, results, boy) => {
     if (!err) {
-      // console.log(results.node)
+      testBuild('ua', results.ua.builds, t)
       t.end()
     }
   })
