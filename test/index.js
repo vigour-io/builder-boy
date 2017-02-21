@@ -81,14 +81,13 @@ test('virtual', t => {
   })
 })
 
-test('package', t => {
+test('package - error', t => {
   build('./test/pkg/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
-    inline: [ 'brisky-stamp' ]
+    targets: [ 'node' ]
   }, (err, results, boy) => {
-    if (!err) {
-      testBuild('ua', results.ua.builds, t)
+    if (err) {
+      t.ok(err.file.indexOf('package.json') !== -1, 'err gets file path')
       t.end()
     }
   })
