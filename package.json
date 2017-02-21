@@ -1,7 +1,7 @@
 {
   "name": "builder-boy",
   "description": "Build and watch es modules FAST",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "main": "lib/index.js",
   "scripts": {
     "test": "node test/index.js",
