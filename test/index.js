@@ -1,2 +1,2 @@
-// require('./basic')
-require('./external')
+require('./basic')
+// require('./external')

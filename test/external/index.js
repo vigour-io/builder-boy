@@ -5,6 +5,7 @@ const test = require('tape')
 
 test('external', t => {
   build('./test/external/a.js', { nowatch: false }, (err, results, boy) => {
+    console.log('wtf.......')
     if (!err) {
       console.log('hello', results.inline.length)
     }
