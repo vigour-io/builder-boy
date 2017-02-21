@@ -71,9 +71,7 @@ build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) =>
           write(dest.replace(/\.js$/, '.browser.js'), code, 'browser'),
         (!targets || targets.includes('inline')) &&
           write(dest.replace(/\.js$/, '.browser.inline.js'), code, 'inline')
-      ]).then(() => {
-        if (!watch) process.exit()
-      })
+      ])
     }
   }
 })
