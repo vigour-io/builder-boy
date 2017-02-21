@@ -4,5 +4,5 @@ import b from './b'
 
 console.log(b, create(), flurps())
 
-async function bek () { // <-- external
-}
+// async function bek () { // <-- external
+// }
