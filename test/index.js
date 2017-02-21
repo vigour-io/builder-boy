@@ -53,8 +53,8 @@ test('env - override', t => {
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
-    targets: [ 'node' ]
-    // inline: [ 'brisky-stamp' ]
+    targets: [ 'node' ],
+    inline: [ 'brisky-stamp' ]
   }, (err, results, boy) => {
     if (!err) {
       testBuild('ua', results.ua.builds, t)
