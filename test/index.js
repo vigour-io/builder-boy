@@ -11,15 +11,14 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 //   })
 // })
 
-test('polyfill', t => {
-  build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
-    if (!err) {
-      generate('polyfill', results)
-      testBuild('polyfill', results, t)
-      t.end()
-    }
-  })
-})
+// test('polyfill', t => {
+//   build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
+//     if (!err) {
+//       testBuild('polyfill', results, t)
+//       t.end()
+//     }
+//   })
+// })
 
 // test('env - inherit', t => {
 //   process.env.beurs = 'ha!'
@@ -118,14 +117,14 @@ test('polyfill', t => {
 //   })
 // })
 
-// test('nested', t => {
-//   build('./test/nested/index.js', {
-//     nowatch: true,
-//     targets: [ 'inline' ]
-//   }, (err, results, boy) => {
-//     // if (err) {
-//       // t.equal(err.message, 'Cannot find module "hello" (1:0)')
-//       // t.end()
-//     // }
-//   })
-// })
+test('nested', t => {
+  build('./test/nested/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ]
+  }, (err, results, boy) => {
+    // if (err) {
+      // t.equal(err.message, 'Cannot find module "hello" (1:0)')
+      // t.end()
+    // }
+  })
+})
