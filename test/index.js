@@ -50,18 +50,20 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 //   })
 // })
 
-// test('ua', t => {
-//   build('./test/ua/index.js', {
-//     nowatch: true,
-//     targets: [ 'node' ],
-//     inline: [ 'brisky-stamp' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('ua', results.ua.builds, t)
-//       t.end()
-//     }
-//   })
-// })
+test('ua', t => {
+  build('./test/ua/index.js', {
+    nowatch: true,
+    targets: [ 'node' ],
+    inline: [ 'brisky-stamp' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      // console.log(results)
+      console.log(results.ua.node.builds['3182226370'])
+      // testBuild('ua', results.ua.node.builds, t)
+      t.end()
+    }
+  })
+})
 
 // test('virtual', t => {
 //   build({
