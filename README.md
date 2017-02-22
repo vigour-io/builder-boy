@@ -13,4 +13,36 @@ Build and watch es modules FAST
 - branches based on user agents
 - virtual modules
 
+###usage
+
+**basic**
+
+`builder-boy fileyouwantbuild.js destination.js`
+
+**raw**
+
+No transpilation or pollyfills
+
+`builder-boy fileyouwantbuild.js destination.js -r`
+
+**watch**
+
+Watch for changes
+
+`builder-boy fileyouwantbuild.js destination.js -w`
+
+**env**
+
+Replaces env variables for inline browser builds
+
+`builder-boy fileyouwantbuild.js destanation.js -e envvar=true -e anotherone`
+
+**target**
+
+Choose specific targets, defaults to inline, browser, node
+
+`builder-boy fileyouwantbuild.js destination.js -t node`
+
+`builder-boy fileyouwantbuild.js destination.js -t node -t browser -t inline`
+
 ![boy](https://media3.giphy.com/media/3o7TKDMPKsakcn9NU4/200.gif#4)
