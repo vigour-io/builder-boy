@@ -9,7 +9,7 @@
     "cover": "nyc npm test",
     "travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "builder-boy": "node ./bin/cmd.js",
-    "precommit": "echo no precommit!"
+    "precommit": "npm run test && standard --fix"
   },
   "precommit": "precommit",
   "bin": {
