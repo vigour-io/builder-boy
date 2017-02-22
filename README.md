@@ -33,7 +33,7 @@ Watch for changes
 
 **env**
 
-Replaces env variables for inline browser builds
+Replaces env variables for inline browser builds, by default inherits from you process.env
 
 `builder-boy fileyouwantbuild.js destanation.js -e envvar=true -e anotherone`
 
