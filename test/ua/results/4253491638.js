@@ -1,4 +1,3 @@
-
 var $2822145224_exports = {}
 
  // FILE: /Users/youzi/dev/brisky-stamp/lib/index.js
@@ -54,16 +53,15 @@ const $2822145224_$501350144 = global.briskystamp
 
 
 var $2822145224 = $2822145224_$501350144
- // UA REPLACED
-var $2244796395={
+;var $2244796395={
   "browser": "firefox",
   "version": 40,
   "prefix": "moz",
   "platform": "android",
   "device": "phone",
   "webview": false
-};
-
+}
+;
 
 
 if ($2244796395.device === 'phone') {

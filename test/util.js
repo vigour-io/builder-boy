@@ -2,6 +2,10 @@ const fs = require('fs')
 const { join } = require('path')
 
 exports.testBuild = (test, results, t) => {
+  const dir = join(__dirname, test, '/results/')
+
+  if (!fs.existsSync(dir)) exports.generate(test, results)
+
   for (let file in results) {
     t.equal(
       results[file],
@@ -14,8 +18,7 @@ exports.testBuild = (test, results, t) => {
 }
 
 exports.generate = (test, results) => {
-  var fs = require('fs')
-  var dir = join(__dirname, test, '/results/')
+  const dir = join(__dirname, test, '/results/')
   if (!fs.existsSync(dir)) fs.mkdirSync(dir)
   for (let file in results) {
     fs.writeFileSync(

@@ -1,6 +1,5 @@
 (function (global, process) { 
-
-;(function (root) {
+(function (root) {
 
   // Store setTimeout reference so promise-polyfill will be unaffected by
   // other code modifying setTimeout (like sinon.useFakeTimers())

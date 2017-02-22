@@ -1,6 +1,6 @@
 const build = require('../')
 const test = require('tape')
-const { testBuild, generate } = require('./util') //eslint-disable-line
+const { testBuild } = require('./util') //eslint-disable-line
 
 // test('simple', t => {
 //   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
@@ -20,50 +20,44 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 //   })
 // })
 
-// test('env - inherit', t => {
-//   process.env.beurs = 'ha!'
-//   build('./test/env/index.js', {
-//     nowatch: true,
-//     targets: [ 'inline' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       t.same(results, {
-//         inline: '(function (global, process) { \nprocess.env = {"beurs":"ha!"};\nconsole.log(process.env.beurs)\n;\n })(window, {})'
-//       }, 'env')
-//       t.end()
-//     }
-//   })
-// })
-
-// test('env - override', t => {
-//   build('./test/env/index.js', {
-//     nowatch: true,
-//     targets: [ 'inline' ],
-//     env: { beurs: true }
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       t.same(results, {
-//         inline: '(function (global, process) { \nprocess.env = {"beurs":true};\nconsole.log(process.env.beurs)\n;\n })(window, {})'
-//       }, 'env')
-//       t.end()
-//     }
-//   })
-// })
-
-test('ua', t => {
-  build('./test/ua/index.js', {
+test('env - override', t => {
+  build('./test/env/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
-    inline: [ 'brisky-stamp' ]
+    targets: [ 'inline' ],
+    env: { beurs: 'ha!' }
   }, (err, results, boy) => {
     if (!err) {
-      // console.log(results)
-      console.log(results.ua.node.builds['3182226370'])
-      // testBuild('ua', results.ua.node.builds, t)
+      testBuild('env', results, t)
       t.end()
     }
   })
 })
+
+test('env - inherit', t => {
+  process.env.beurs = 'ha!'
+  build('./test/env/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      testBuild('env', results, t)
+      t.end()
+    }
+  })
+})
+
+// test('ua', t => {
+//   build('./test/ua/index.js', {
+//     nowatch: true,
+//     targets: [ 'node' ],
+//     inline: [ 'brisky-stamp' ]
+//   }, (err, results, boy) => {
+//     if (!err) {
+//       testBuild('ua', results.ua.node.builds, t)
+//       t.end()
+//     }
+//   })
+// })
 
 // test('virtual', t => {
 //   build({
@@ -119,15 +113,15 @@ test('ua', t => {
 //   })
 // })
 
-test('nested', t => {
-  build('./test/nested/index.js', {
-    nowatch: true,
-    targets: [ 'inline' ]
-  }, (err, results, boy) => {
-    console.log(results.inline)
-    // if (err) {
-      // t.equal(err.message, 'Cannot find module "hello" (1:0)')
-      // t.end()
-    // }
-  })
-})
+// test('nested', t => {
+//   build('./test/nested/index.js', {
+//     nowatch: true,
+//     targets: [ 'inline' ]
+//   }, (err, results, boy) => {
+//     console.log(results.inline)
+//     if (!err) {
+//       testBuild('nested', results, t)
+//       t.end()
+//     }
+//   })
+// })
