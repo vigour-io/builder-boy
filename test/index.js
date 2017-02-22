@@ -122,6 +122,7 @@ test('nested', t => {
     nowatch: true,
     targets: [ 'inline' ]
   }, (err, results, boy) => {
+    console.log(results.inline)
     // if (err) {
       // t.equal(err.message, 'Cannot find module "hello" (1:0)')
       // t.end()
