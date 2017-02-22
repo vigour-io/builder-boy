@@ -14,7 +14,7 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 test('polyfill', t => {
   build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
-      // generate('polyfill', results)
+      generate('polyfill', results)
       testBuild('polyfill', results, t)
       t.end()
     }

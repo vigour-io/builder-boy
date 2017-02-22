@@ -21,8 +21,8 @@ function * $3877244887_ballz () {
   yield $3877244887_x()
 }
 
-global.fetch('http://google.com').catch(err => {
-  console.log(err)
+global.fetch('http://google.com').then(() => {}).catch(err => {
+  console.log('errrr', err)
 })
 
 for (let i of $3877244887_ballz()) {

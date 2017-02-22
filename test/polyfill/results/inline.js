@@ -1480,8 +1480,8 @@ function $3877244887_ballz() {
   }, _marked[0], this);
 }
 
-global.fetch('http://google.com').catch(function (err) {
-  console.log(err);
+global.fetch('http://google.com').then(function () {}).catch(function (err) {
+  console.log('errrr', err);
 });
 
 var _iteratorNormalCompletion = true;

@@ -17,8 +17,8 @@ function * ballz () {
   yield x()
 }
 
-global.fetch('http://google.com').catch(err => {
-  console.log(err)
+global.fetch('http://google.com').then(() => {}).catch(err => {
+  console.log('errrr', err)
 })
 
 for (let i of ballz()) {
