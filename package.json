@@ -15,6 +15,11 @@
   "bin": {
     "builder-boy": "bin/cmd.js"
   },
+  "standard": {
+    "ignore": [
+      "test/**"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vigour-io/builder-boy.git"
