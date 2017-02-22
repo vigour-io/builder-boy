@@ -1,6 +1,4 @@
-var $3651276138 = require('whatwg-fetch')
-;var $3661716756 = require('regenerator-runtime/runtime')
-;const $3877244887_blurf = () => {}
+const $3877244887_blurf = () => {}
 
 async function $3877244887_bla () {
   await $3877244887_blurf() + '!'
