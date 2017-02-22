@@ -118,7 +118,6 @@ test('nested', t => {
     nowatch: true,
     targets: [ 'inline' ]
   }, (err, results, boy) => {
-    console.log(results.inline)
     if (!err) {
       testBuild('nested', results, t)
       t.end()
