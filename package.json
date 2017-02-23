@@ -43,6 +43,7 @@
     "chalk": "^1.1.3",
     "chokidar": "^1.6.1",
     "is-builtin-module": "^1.0.0",
+    "js-beautify": "^1.6.11",
     "node-fetch": "^1.6.3",
     "promise-polyfill": "^6.0.2",
     "regenerator": "^0.9.5",
