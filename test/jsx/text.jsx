@@ -10,14 +10,17 @@ const Blurfx = state => <div>
       color: 'pink',
       // background: state.color.compute()
     }}>haha</div>
-    <img src={cat}></img>
+    <img src={cat}/>
   </div>
-  <div>{state.nested.blurf.compute()}</div>
+  <div>---{state.nested.blurf.compute() + '!!!!'}----</div>
   <div key={id}>
     hello: {flurps} !!!!!
   </div>
-  <a key='hello'>
-  </a>
+  <a key='hello' />
+  <button onClick={({ state }) => {
+    state.nested.blurf.set(Math.random())
+    console.log('CLICK', state)
+  }}>click me!</button>
   <div>
   {{
     blabs: <div>WOW MIND IS BLOWN</div>,
