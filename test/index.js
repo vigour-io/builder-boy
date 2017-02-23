@@ -1,11 +1,13 @@
 const build = require('../')
-// const test = require('tape')
+const test = require('tape')
 const { testBuild } = require('./util') //eslint-disable-line
 
 const fs = require('fs')
 
 build('./test/jsx/index.js', { target: 'inline' }, (err, { inline }) => {
-  fs.writeFileSync('./test/jsx/dist/bla.js', inline)
+  if (!err) {
+    fs.writeFileSync('./test/jsx/dist/bla.js', inline)
+  }
 })
 
 // test('simple', t => {
