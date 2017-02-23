@@ -1,4 +1,4 @@
-// import { render } from 'brisky-render'
+import { render } from 'brisky-render'
 import Text from './text.jsx'
 
 // const Text = { text: 'x' }
