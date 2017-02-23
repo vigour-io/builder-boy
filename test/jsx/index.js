@@ -3,6 +3,6 @@ import Text from './text.jsx'
 
 document.body.appendChild(render(Text, {
   title: 'hello world!',
-  nested: { blur: 'hello' },
+  nested: { blurf: 'hello' },
   color: 'blue'
 }))

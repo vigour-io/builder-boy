@@ -12,6 +12,7 @@ const Blurfx = state => <div>
     }}>haha</div>
     <img src={cat}></img>
   </div>
+  <div>{state.nested.blurf.compute()}</div>
   <div key={id}>
     hello: {flurps} !!!!!
   </div>
