@@ -1,6 +1,5 @@
 const Blurfx = state => <div>
-  <div>
-    static boy
+  <div>static boy
     <div>haha</div>
   </div>
 </div>
