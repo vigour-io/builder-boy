@@ -2,18 +2,27 @@ const cat = 'https://media1.popsugar-assets.com/files/thumbor/EYb5dO2AAuFKts5Vj6
 
 const flurps = 'hahahahahaha'
 
-const key = 'hello'
+const id = 'bye'
 
 const Blurfx = state => <div>
   <div>static boy
-    <div style={{ color: 'pink' }}>haha</div>
+    <div style={{
+      color: 'pink',
+      // background: state.color.compute()
+    }}>haha</div>
     <img src={cat}></img>
   </div>
-  <div key={key}>
+  <div key={id}>
     hello: {flurps} !!!!!
   </div>
   <a key='hello'>
   </a>
+  <div>
+  {{
+    blabs: <div>WOW MIND IS BLOWN</div>,
+    blurf: <div>WOW MIND IS BLOWN2</div>
+  }}
+  </div>
 </div>
 
 var $615976759 = Blurfx

@@ -3,4 +3,7 @@ import Text from './text.jsx'
 
 // const Text = { text: 'x' }
 
-document.body.appendChild(render(Text, { title: 'hello world!' }))
+document.body.appendChild(render(Text, {
+  title: 'hello world!',
+  color: 'blue'
+}))
