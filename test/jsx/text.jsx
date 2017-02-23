@@ -13,7 +13,6 @@ const Blurfx = state => <div>
     hello: {flurps} !!!!!
   </div>
   <a key='hello'>
-
   </a>
 </div>
 
