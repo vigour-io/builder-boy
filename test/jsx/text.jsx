@@ -2,36 +2,7 @@ const flurps = 'hahahahahaha'
 
 const id = 'bye'
 
-const Blurfx = state => <div>
-  <div>static boy
-    <div style={{
-      color: 'pink',
-      background: state.color.compute(),
-      [id]: true,
-      transition: 'transform 0.2s',
-      transform: {
-        x: () => {
-          const val = state.nested.blurf.compute()
-          return isNaN(val) ? 200 : val + 200
-        }
-      }
-      // nested as well!
-    }}>haha</div>
-    <img src={state.cat.compute()}/>
-  </div>
-  <div>--- {'!!!' + state.nested.blurf.compute() + '!!!!'} ----</div>
-  <div key={id}>hello: {flurps} !!!!!</div>
-  <a key='hello' />
-  <button onClick={({ state }) => state.nested.blurf.set((Math.random() * 500) | 0)}>
-    click me!
-  </button>
-  <div>
-  {{
-    blabs: <div>WOW MIND IS BLOWN</div>,
-    blurf: <div>WOW MIND IS BLOWN2</div>
-  }}
-  </div>
-</div>
+const Blurfx = state => <ul>{state.list.map(state => <li>yes</li>)}</ul>
 
 var $615976759 = Blurfx
 

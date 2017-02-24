@@ -8,5 +8,9 @@ document.body.appendChild(render(Text, {
   nested: { blurf: 'hello' },
   color: 'blue',
   x: 100,
-  cat
+  cat,
+  list: [
+    { title: 'lullz' },
+    { title: 'blurfff' }
+  ]
 }))
