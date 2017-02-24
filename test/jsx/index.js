@@ -11,6 +11,7 @@ document.body.appendChild(render(Text, {
   cat,
   list: [
     { title: 'lullz' },
-    { title: 'blurfff' }
+    { title: 'blurfff' },
+    { title: 'yes', blurf: true }
   ]
 }))

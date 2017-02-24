@@ -5,15 +5,11 @@ const id = 'bye'
 const Blurfx = state => <ul>
   {state.nested.blurf.compute().toUpperCase()}
   <hr/>
-  {state.list.map(state => <li>yes</li>)}
+  {state.list.slice(0, 3)
+    .filter(state => state.blurf.compute() && state.title.burf.compute() === 'yes')
+    .map(state =>
+      <li onClick={({ state }) => state.set({ blurf: false })}>yes</li>
+  )}
 </ul>
 
 var $615976759 = Blurfx
-
-// transpile objects in a fn with capitall as well then its complete
-// then you an mix everythign up
-
-// render(
-//   <html>{{ inject: [ blurf, blarf, blex ] }}<Yuzi/></html>, {
-
-// })
