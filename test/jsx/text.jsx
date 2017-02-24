@@ -8,8 +8,12 @@ const Blurfx = state => <div>
       color: 'pink',
       background: state.color.compute(),
       [id]: true,
+      transition: 'transform 0.2s',
       transform: {
-        x: state.nested.blurf.compute() + 20
+        x: () => {
+          const val = state.nested.blurf.compute()
+          return isNaN(val) ? 200 : val + 200
+        }
       }
       // nested as well!
     }}>haha</div>
