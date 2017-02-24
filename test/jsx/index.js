@@ -7,5 +7,6 @@ document.body.appendChild(render(Text, {
   title: 'hello world!',
   nested: { blurf: 'hello' },
   color: 'blue',
+  x: 100,
   cat
 }))
