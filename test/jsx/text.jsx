@@ -6,7 +6,7 @@ const Blurfx = state => <div>
   <div>static boy
     <div style={{
       color: 'pink',
-      // background: state.color.compute()
+      background: state.color.compute()
     }}>haha</div>
     <img src={state.cat.compute()}/>
   </div>
