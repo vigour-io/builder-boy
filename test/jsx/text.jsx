@@ -7,6 +7,7 @@ const Blurfx = state => <div>
     <div style={{
       color: 'pink',
       background: state.color.compute(),
+      [id]: true,
       transform: {
         x: state.nested.blurf.compute() + 20
       }
