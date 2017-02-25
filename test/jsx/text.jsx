@@ -4,17 +4,22 @@ const id = 'bye'
 
 const click = ({ state }) => state.set({ blurf: { real: false } })
 
-const Blurfx = s => <ul>
-  {s.nested.blurf.compute().toUpperCase()}
+// need to make support for variables etc
+//   {yuz.nested.blurf.compute().toUpperCase()}
+
+const Blurfx = yuz => <ul>
   <hr/>
-  {s.list
-    .filter(s =>
-      s.blurf.real.compute() &&
-      s.title.compute() === 'yes'
-    )
-    .slice(0, 3)
+  {yuz.list
+    // .filter(x =>
+    //   x.blurf.real.compute() &&
+    //   x.title.compute() === 'yes'
+    // )
+    // .slice(0, 3)
+    // .sort((a, b) => {
+    //   return a.order.compute() > b.order.compute() ? -1 : 1
+    // })
     .sort((a, b) => {
-      return a.title.compute() > b.title.compute() ? -1 : 1
+      return a.key > b.key ? -1 : 1
     })
     .map(state => {
       return <li onClick={click}>
