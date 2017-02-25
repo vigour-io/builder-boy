@@ -9,9 +9,32 @@ document.body.appendChild(render(Text, {
   color: 'blue',
   x: 100,
   cat,
-  list: [
-    { title: 'lullz' },
-    { title: 'blurfff' },
-    { title: 'yes', blurf: true }
-  ]
+  list: {
+    props: {
+      default: {
+        blurf: { real: {
+          val: true,
+          on: (val, stamp, t) => {
+            if (val !== true) {
+              t.set(new Promise(resolve => {
+                setTimeout(() => resolve(true), 1e3)
+              }))
+            }
+          }
+        } }
+      }
+    },
+    inject: [[
+      { title: 'lullz' },
+      { title: 'blurfff' },
+      { title: 'yes', emoji: '👺' },
+      { title: 'yes', emoji: '😭' },
+      { title: 'yes', emoji: '💩' },
+      { title: 'yes', emoji: '🎃' },
+      { title: 'yes', emoji: '👼' },
+      { title: 'yes', emoji: '👏' },
+      { title: 'yes', emoji: '💅' },
+      { title: 'yes', emoji: '💃' }
+    ]]
+  }
 }))

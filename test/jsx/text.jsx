@@ -2,13 +2,22 @@ const flurps = 'hahahahahaha'
 
 const id = 'bye'
 
+const click = ({ state }) => state.set({ blurf: { real: false } })
+
 const Blurfx = state => <ul>
   {state.nested.blurf.compute().toUpperCase()}
   <hr/>
-  {state.list.slice(0, 3)
-    .filter(state => state.blurf.compute() && state.title.burf.compute() === 'yes')
-    .map(state =>
-      <li onClick={({ state }) => state.set({ blurf: false })}>yes</li>
+  {state.list
+    .filter(state =>
+      state.blurf.real.compute() &&
+      state.title.compute() === 'yes'
+    )
+    .slice(0, 3)
+    .map(state => {
+      return <li onClick={click}>
+        yes: {state.emoji.compute()}
+      </li>
+    }
   )}
 </ul>
 
