@@ -36,62 +36,59 @@ const dec = e => {
   e.state.set({ order: e.state.get('order').compute() - 1})
 }
 
-// const Blurfx = yuz => <ul style={{ fontFamily: 'courier' }}>
-//   ----{yuz.title.compute().toUpperCase()}----
-//   <hr/>
-//   {yuz.list
-//     .filter(x => x.emoji.compute() && x.blurf.real.compute())
-//     .sort((a, b) => a.order.compute() > b.order.compute() ? -1 : 1)
-//     .map(yuz => {
-//       return <li style={liStyle} onClick={click} onMouseenter={hover}>
-//         fun {yuz.emoji.compute()} fun
-//         <span> {yuz.order.compute()}</span>
-//         <button onClick={inc} style={buttonStyle}>+</button>
-//         <button onClick={dec} style={buttonStyle}>-</button>
-//       </li>
-//     }
-//   )}
-// </ul>
+const Blurfx = yuz => <ul style={{ fontFamily: 'courier' }}>
+  ----{yuz.title.compute().toUpperCase()}----
+  <hr/>
+  {yuz.list
+    .filter(x => x.emoji.compute() && x.blurf.real.compute())
+    .sort((a, b) => a.order.compute() > b.order.compute() ? -1 : 1)
+    .map(yuz => {
+      return <li style={liStyle} onClick={click} onMouseenter={hover}>
+        fun {yuz.emoji.compute()} fun
+        <span> {yuz.order.compute()}</span>
+        <button onClick={inc} style={buttonStyle}>+</button>
+        <button onClick={dec} style={buttonStyle}>-</button>
+      </li>
+    }
+  )}
+</ul>
 
-const Blurfx = state => <div>{state.list.map(state => <div>1</div>)}</div>
+// const Blurfx = state => <div>{state.list.map(state => <div>1</div>)}</div>
 
+const style = {
+  padding: '10px',
+  background: '#eee',
+  margin: '0 auto',
+  width: '100px',
+  height: '100px',
+  borderRadius: '50%'
+}
 
-// const style = {
-//   padding: '10px',
-//   background: '#eee',
-//   margin: '0 auto',
-//   width: '100px',
-//   height: '100px',
-//   borderRadius: '50%'
-// }
+const style2 = {
+  background: 'blue',
+  color: 'white',
+  margin: '0 auto',
+  width: '20px',
+  height: '20px',
+  textAlign: 'center',
+  userSelect: 'none',
+  padding: '10px'
+}
 
-// const style2 = {
-//   background: 'blue',
-//   color: 'white',
-//   margin: '0 auto',
-//   width: '20px',
-//   height: '20px',
-//   textAlign: 'center',
-//   userSelect: 'none',
-//   padding: '10px'
-// }
-
-
-
-const Blurfxx = state => <div>x</div>
-
-// const Blurfxx = state => {
-//   console.log('lets add some swtichin\'')
-//   if (state.condition.compute() === 'ballz') {
-//     return <div style={style} onClick={({ state }) => state.set({
-//       condition: 'no-ballz'
-//     })}></div>
-//   } else if (state.root().title.parent().compute() === 'top dog') {
-//     return <div style={style2} onClick={({ state }) => state.set({
-//       condition: 'ballz'
-//     })}>x</div>
-//   }
-// }
+const Blurfxxx = state => {
+  console.log('lets add some swtichin\'')
+  if (state.condition.compute() === 'ballz') {
+    return <div style={style} onClick={({ state }) => state.set({
+      condition: 'no-ballz'
+    })}></div>
+  } else if (state.root().title.parent().compute() === 'top dog') {
+    return <div style={style2} onClick={({ state }) => state.set({
+      condition: 'ballz'
+    })}>x</div>
+  }
+}
 
 
-var $615976759 = Blurfx
+const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
+
+var $615976759 = Blurfxx
