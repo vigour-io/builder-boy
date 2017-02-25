@@ -12,6 +12,17 @@ document.body.appendChild(render(Text, {
   list: {
     props: {
       default: {
+        order: 1,
+        active: {
+          val: false,
+          on: (val, stamp, t) => {
+            if (val === true) {
+              t.set(new Promise(resolve => {
+                setTimeout(() => resolve(false), 5e2)
+              }))
+            }
+          }
+        },
         blurf: { real: {
           val: true,
           on: (val, stamp, t) => {
