@@ -25,7 +25,7 @@ const Blurfx = state => {
     return <div style={style} onClick={({ state }) => state.set({
       condition: 'no-ballz'
     })}></div>
-  } else if (state.root().title.parent(5).compute() === 'hello world!') {
+  } else if (state.root().title.parent().compute() === 'top dog') {
     return <div style={style2} onClick={({ state }) => state.set({
       condition: 'ballz'
     })}>x</div>

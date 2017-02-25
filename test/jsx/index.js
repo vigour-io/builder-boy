@@ -9,6 +9,7 @@ document.body.appendChild(render({ smurt: Text }, {
   color: 'blue',
   x: 100,
   cat,
+  val: 'top dog',
   list: {
     props: {
       default: {
