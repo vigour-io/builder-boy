@@ -89,12 +89,9 @@
 // const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
 
 // its the nested exptession...
-const Gurk = state => <div>{state.list.map(state => {
-  if (state.title.compute() !== 'yes') {
-    return <div>1</div>
-  } else {
-    return <span>{state.emoji.compute()}</span>
-  }
-})}</div>
+const Gurk = state => <div>{state.list.map(state => state.title.compute() !== 'yes'
+  ? <div>1</div>
+  : <span>{state.emoji.compute()}</span>
+)}</div>
 
 var $615976759 = Gurk
