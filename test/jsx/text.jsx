@@ -44,6 +44,7 @@ const dec = e => {
 }
 
 const Blurfx = yuz => <ul style={{ fontFamily: 'courier' }}>
+  ----{yuz.title.compute().toUpperCase()}----
   <hr/>
   {yuz.list
     .filter(x => x.emoji.compute() && x.blurf.real.compute())
