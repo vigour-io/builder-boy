@@ -15,16 +15,17 @@ const style2 = {
   width: '20px',
   height: '20px',
   textAlign: 'center',
+  userSelect: 'none',
   padding: '10px'
 }
 
 const Blurfx = state => {
-  console.log('lets add some swithcin\'')
+  console.log('lets add some swtichin\'')
   if (state.condition.compute() === 'ballz') {
     return <div style={style} onClick={({ state }) => state.set({
       condition: 'no-ballz'
     })}></div>
-  } else {
+  } else if (state.root().title.compute() === 'hello world!') {
     return <div style={style2} onClick={({ state }) => state.set({
       condition: 'ballz'
     })}>x</div>
