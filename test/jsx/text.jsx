@@ -4,18 +4,21 @@ const id = 'bye'
 
 const click = ({ state }) => state.set({ blurf: { real: false } })
 
-const Blurfx = state => <ul>
-  {state.nested.blurf.compute().toUpperCase()}
+const Blurfx = s => <ul>
+  {s.nested.blurf.compute().toUpperCase()}
   <hr/>
-  {state.list
-    .filter(state =>
-      state.blurf.real.compute() &&
-      state.title.compute() === 'yes'
+  {s.list
+    .filter(s =>
+      s.blurf.real.compute() &&
+      s.title.compute() === 'yes'
     )
     .slice(0, 3)
+    .sort((a, b) => {
+      return a.title.compute() > b.title.compute() ? -1 : 1
+    })
     .map(state => {
       return <li onClick={click}>
-        yes: {state.emoji.compute()}
+        yes: {s.emoji.compute()}
       </li>
     }
   )}
