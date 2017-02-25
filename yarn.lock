@@ -2772,6 +2772,10 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+stamp@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/stamp/-/stamp-4.0.1.tgz#7b9cc9d1d375ae4c5140b9a93fe04656b6ebf31d"
+
 standard-engine@~5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/standard-engine/-/standard-engine-5.2.0.tgz#400660ae5acce8afd4db60ff2214a9190ad790a3"
