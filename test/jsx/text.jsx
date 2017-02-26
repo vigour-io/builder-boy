@@ -36,15 +36,19 @@ const dec = e => {
   e.state.set({ order: e.state.get('order').compute() - 1})
 }
 
-const Blurfx = s => <ul>
-  above
-  <hr/>
-  {s.title.compute().toUpperCase()}
-  <hr/>
-  {s.list.map(s => !s.compute() && <li>{s.title.compute()}</li>)}
-  <hr/>
-  bellow
-</ul>
+const Blurfx = s => <h1>
+  {s.title.compute() + s.nested.blurf.compute()} : {s.nested.blurf.compute()}
+</h1>
+
+// const Blurfx = s => <ul>
+//   <h1>header</h1>
+//   <hr/>
+//     {s.title.compute().toUpperCase()}
+//   <hr/>
+//     {s.list.map(s => !s.compute() && <li>{s.title.compute()}</li>)}
+//   <hr/>
+//   footer
+// </ul>
 
 //  pavel {s.title.compute().toUpperCase()} pavel
 //   <hr/>
