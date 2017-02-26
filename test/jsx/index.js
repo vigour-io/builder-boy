@@ -49,6 +49,4 @@ document.body.appendChild(render({ smurt: Text }, {
       { title: 'yes', emoji: '💃' }
     ]]
   }
-}, (s, subs) => {
-  console.log(subs)
 }))

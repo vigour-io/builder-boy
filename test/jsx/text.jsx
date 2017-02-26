@@ -37,11 +37,13 @@ const dec = e => {
 }
 
 const Blurfx = s => <ul>
-above
-<hr/>
-{s.list.map(s => <li>{s.title.compute()}</li>)}
-<hr/>
-bellow
+  above
+  <hr/>
+  {s.title.compute().toUpperCase()}
+  <hr/>
+  {s.list.map(s => !s.compute() && <li>{s.title.compute()}</li>)}
+  <hr/>
+  bellow
 </ul>
 
 //  pavel {s.title.compute().toUpperCase()} pavel
