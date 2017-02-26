@@ -1,57 +1,103 @@
-// const click = ({ state }) => state.set({ blurf: { real: false } })
+const click = ({ state }) => state.set({ blurf: { real: false } })
 
-// const buttonStyle = {
-//   border:'1px solid #ccc',
-//   background: '#333',
-//   color: 'white',
-//   borderRadius: '50%',
-//   height: '25px',
-//   marginLeft: '5px',
-//   width: '25px',
-//   float: 'right'
-// }
+const buttonStyle = {
+  border:'1px solid #ccc',
+  background: '#333',
+  color: 'white',
+  borderRadius: '50%',
+  height: '25px',
+  marginLeft: '5px',
+  width: '25px',
+  float: 'right'
+}
 
-// const liStyle = {
-//   background: '#eee',
-//   padding: '5px',
-//   borderBottom: '1px solid #ccc',
-//   transition: 'margin 0.2s',
-//   margin: {
-//     $: 'active',
-//     $transform: (val, state) => val ? '10px' : ''
-//   }
-// }
+const liStyle = {
+  background: '#eee',
+  padding: '5px',
+  borderBottom: '1px solid #ccc',
+  transition: 'filter 0.5s',
+  filter: {
+    $: 'active',
+    $transform: (val, state) => val ? 'grayscale(100%) invert(75%)' : 'grayscale(100%)'
+  }
+}
 
-// const hover = ({ state }) => {
-//   state.set({ active: true })
-// }
+const hover = ({ state }) => {
+  state.set({ active: true })
+}
 
-// const inc = e => {
-//   e.prevent = true
-//   e.state.set({ order: e.state.get('order').compute() + 1})
-// }
+const inc = e => {
+  e.prevent = true
+  e.state.set({ order: e.state.get('order').compute() + 1})
+}
 
-// const dec = e => {
-//   e.prevent = true
-//   e.state.set({ order: e.state.get('order').compute() - 1})
-// }
+const dec = e => {
+  e.prevent = true
+  e.state.set({ order: e.state.get('order').compute() - 1})
+}
 
-// const Blurfx = yuz => <ul style={{ fontFamily: 'courier' }}>
-//   ----{yuz.title.compute().toUpperCase()}----
+//  pavel {s.title.compute().toUpperCase()} pavel
 //   <hr/>
-//   {yuz.list
-//     .filter(x => x.emoji.compute() && x.blurf.real.compute())
-//     .sort((a, b) => a.order.compute() > b.order.compute() ? -1 : 1)
-//     .map(yuz => {
-//       return <li style={liStyle} onClick={click} onMouseenter={hover}>
-//         fun {yuz.emoji.compute()} fun
-//         <span> {yuz.order.compute()}</span>
-//         <button onClick={inc} style={buttonStyle}>+</button>
-//         <button onClick={dec} style={buttonStyle}>-</button>
-//       </li>
-//     }
-//   )}
-// </ul>
+
+    // .filter(x => x.emoji.compute() && x.blurf.real.compute())
+    // .sort((a, b) => a.order.compute() > b.order.compute() ? -1 : 1)
+
+const Blurfx = s => <ul style={{
+    fontFamily: 'Andale Mono',
+    listStyleType: 'none'
+  }}>
+  {s.list
+    .sort((a, b) => a.order.compute() > b.order.compute() ? 1 : -1)
+    .map(s =>
+      s.title.compute() === 'yes' && s.order.compute() > -1
+      ? <li>
+        {s.emoji.compute()}
+        <button>
+          order
+        </button>
+        </li>
+      : <div>the ballz</div>
+    )}
+</ul>
+
+// onClick={({ state }) => state.set({ order: Math.random() * 99 }) }
+
+
+//<li style={liStyle} onClick={click} onMouseenter={hover}>
+//        fun {yuz.emoji.compute()} fun
+// <span> {yuz.order.compute()}</span>
+// <button onClick={inc} style={buttonStyle}>+</button>
+// <button onClick={dec} style={buttonStyle}>-</button>
+// </li>
+
+// const badge = {
+//   display: 'inline-block',
+//   padding: '15px',
+//   width: '125px',
+//   margin: '15px',
+//   fontSize: '100px',
+//   height: '125px',
+//   overflow: 'hidden',
+//   background: '#ebebeb',
+//   transition: 'transform 5s',
+//   borderRadius: '50%',
+//   filter: 'grayscale(100%) invert(75%)',
+//   userSelect: 'none',
+//   boxShadow: '0px 0px 30px #ebebeb'
+// }
+
+// // its the nested exptession...
+// const Gurk = state => <div style={{
+//     textAlign: 'center',
+//     fontFamily: 'Andale Mono'
+//   }}>{
+//   state.list
+//     .sort((a, b) => a.order.compute() > b.order.compute() ? 1 : -1)
+//     .map(state => state.title.compute() !== 'yes'
+//       ? <div><hr/><div style={badge}>🙊</div><hr/></div>
+//       : <div style={badge}>{state.emoji.compute()}</div>
+//     )
+//   }</div>
 
 // const style = {
 //   padding: '10px',
@@ -86,15 +132,8 @@
 //   }
 // }
 
+// a: Gurk, c: Blurfxxx
+
+var $615976759 = { b: Blurfx }
+
 // const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
-
-// its the nested exptession...
-const Gurk = state => <div>{
-  state.list.map(
-    state => state.title.compute() !== 'yes'
-      ? <div><hr/>yes<hr/></div>
-      : <span>{state.emoji.compute()}</span>
-   )
-}</div>
-
-var $615976759 = Gurk
