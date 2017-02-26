@@ -36,9 +36,11 @@
 //   e.state.set({ order: e.state.get('order').compute() - 1})
 // }
 
-const Blurfx = s => <h1>
-  {s.title.compute() + s.nested.blurf.compute()}
-</h1>
+// const Blurfx = s => <h1>
+//   {s.title.compute() + s.nested.blurf.compute()}
+// </h1>
+
+const Blurfx = s => s.title.compute() && <div>bla</div>
 
 // const Blurfx = s => <ul>
 //   <h1>header</h1>
