@@ -1,43 +1,43 @@
-const click = ({ state }) => state.set({ blurf: { real: false } })
+// const click = ({ state }) => state.set({ blurf: { real: false } })
 
-const buttonStyle = {
-  border:'1px solid #ccc',
-  background: '#333',
-  color: 'white',
-  borderRadius: '50%',
-  height: '25px',
-  marginLeft: '5px',
-  width: '25px',
-  float: 'right'
-}
+// const buttonStyle = {
+//   border:'1px solid #ccc',
+//   background: '#333',
+//   color: 'white',
+//   borderRadius: '50%',
+//   height: '25px',
+//   marginLeft: '5px',
+//   width: '25px',
+//   float: 'right'
+// }
 
-const liStyle = {
-  background: '#eee',
-  padding: '5px',
-  borderBottom: '1px solid #ccc',
-  transition: 'filter 0.5s',
-  filter: {
-    $: 'active',
-    $transform: (val, state) => val ? 'grayscale(100%) invert(75%)' : 'grayscale(100%)'
-  }
-}
+// const liStyle = {
+//   background: '#eee',
+//   padding: '5px',
+//   borderBottom: '1px solid #ccc',
+//   transition: 'filter 0.5s',
+//   filter: {
+//     $: 'active',
+//     $transform: (val, state) => val ? 'grayscale(100%) invert(75%)' : 'grayscale(100%)'
+//   }
+// }
 
-const hover = ({ state }) => {
-  state.set({ active: true })
-}
+// const hover = ({ state }) => {
+//   state.set({ active: true })
+// }
 
-const inc = e => {
-  e.prevent = true
-  e.state.set({ order: e.state.get('order').compute() + 1})
-}
+// const inc = e => {
+//   e.prevent = true
+//   e.state.set({ order: e.state.get('order').compute() + 1})
+// }
 
-const dec = e => {
-  e.prevent = true
-  e.state.set({ order: e.state.get('order').compute() - 1})
-}
+// const dec = e => {
+//   e.prevent = true
+//   e.state.set({ order: e.state.get('order').compute() - 1})
+// }
 
 const Blurfx = s => <h1>
-  {s.title.compute() + s.nested.blurf.compute()} : {s.nested.blurf.compute()}
+  {s.title.compute() + s.nested.blurf.compute()}
 </h1>
 
 // const Blurfx = s => <ul>
