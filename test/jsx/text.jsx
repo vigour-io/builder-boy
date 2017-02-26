@@ -41,7 +41,19 @@ const Blurfxx = s => <h1>
 </h1>
 
 
-const Blurfx = s => s.title.compute() && s.nested.blurf.compute() && <div>{s.title.compute()}</div>
+// need to be able to change inheritance as well...
+// can do multiple things
+
+// first -- add the type when you use it and its within scope
+      // probably easiest
+
+// allways add { type }
+// second -- when not in scope add type: { }
+
+// later opt can be to not use type when it does nto change stuff
+// can also add it to props when tis local
+
+const Blurfx = s => s.title.compute() && <Bla/>
 
 // const Blurfx = s => <ul>
 //   <h1>header</h1>
