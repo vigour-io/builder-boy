@@ -36,29 +36,31 @@ const dec = e => {
   e.state.set({ order: e.state.get('order').compute() - 1})
 }
 
+const Blurfx = s => <ul>{s.list.map(s => <li>item</li>)}</ul>
+
 //  pavel {s.title.compute().toUpperCase()} pavel
 //   <hr/>
 
     // .filter(x => x.emoji.compute() && x.blurf.real.compute())
     // .sort((a, b) => a.order.compute() > b.order.compute() ? -1 : 1)
 
-const Blurfx = s => <ul style={{
-    fontFamily: 'Andale Mono',
-    listStyleType: 'none'
-  }}>
-  {s.list
-    .sort((a, b) => a.order.compute() > b.order.compute() ? 1 : -1)
-    .map(s =>
-      s.title.compute() === 'yes' && s.order.compute() > -1
-      ? <li>
-        {s.emoji.compute()}
-        <button>
-          order
-        </button>
-        </li>
-      : <div>the ballz</div>
-    )}
-</ul>
+// const Blurfx = s => <ul style={{
+//     fontFamily: 'Andale Mono',
+//     listStyleType: 'none'
+//   }}>
+//   {s.list
+//     .sort((a, b) => a.order.compute() > b.order.compute() ? 1 : -1)
+//     .map(s =>
+//       s.title.compute() === 'yes' && s.order.compute() > -1
+//       ? <li>
+//         {s.emoji.compute()}
+//         <button>
+//           order
+//         </button>
+//         </li>
+//       : <div>the ballz</div>
+//     )}
+// </ul>
 
 // onClick={({ state }) => state.set({ order: Math.random() * 99 }) }
 
