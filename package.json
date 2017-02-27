@@ -45,6 +45,7 @@
     "is-builtin-module": "^1.0.0",
     "js-beautify": "^1.6.11",
     "node-fetch": "^1.6.3",
+    "object.assign": "^4.0.4",
     "promise-polyfill": "^6.0.2",
     "regenerator": "^0.9.5",
     "regenerator-runtime": "^0.10.1",
