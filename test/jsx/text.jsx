@@ -53,7 +53,11 @@ const Blurfxx = s => <h1>
 // later opt can be to not use type when it does nto change stuff
 // can also add it to props when tis local
 
-const Blurfx = s => s.title.compute() && <Bla/>
+// import Bla from './yuz'
+
+const Bla = <div></div>
+
+const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 
 // const Blurfx = s => <ul>
 //   <h1>header</h1>
