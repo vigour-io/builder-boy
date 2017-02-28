@@ -59,15 +59,14 @@ const Bla = <div></div>
 
 const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 
-// const Blurfx = s => <ul>
-//   <h1>header</h1>
-//   <hr/>
-//     {s.title.compute().toUpperCase()}
-//   <hr/>
-//     {s.list.map(s => !s.compute() && <li>{s.title.compute()}</li>)}
-//   <hr/>
-//   footer
-// </ul>
+const Blurfx = s => <ul>
+  <h1>header</h1>
+  {s.title.compute() + '!' + s.subtitle.compute()}
+  {s.list
+    .sort((a, b) => a.order.compute() - b.order.compute() ? 1 : -1)
+    .map(s => !s.compute() && <li>{s.title.compute()}</li>)}
+  footer
+</ul>
 
 //  pavel {s.title.compute().toUpperCase()} pavel
 //   <hr/>
