@@ -36,9 +36,9 @@
 //   e.state.set({ order: e.state.get('order').compute() - 1})
 // }
 
-const Blurfxx = s => <h1>
-  {s.title.compute() + s.nested.blurf.compute()}
-</h1>
+// const Blurfxx = s => <h1>
+//   {s.title.compute() + s.nested.blurf.compute()}
+// </h1>
 
 
 // need to be able to change inheritance as well...
@@ -55,11 +55,11 @@ const Blurfxx = s => <h1>
 
 // import Bla from './yuz'
 
-const Bla = <div></div>
+// const Bla = <div></div>
 
-const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
+// const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 
-const Blurfx = s => <ul>
+const Blurfxx = s => <ul>
   <h1>header</h1>
   {s.title.compute() + '!' + s.subtitle.compute()}
   {s.list
@@ -166,6 +166,6 @@ const Blurfx = s => <ul>
 
 // a: Gurk, c: Blurfxxx
 
-var $615976759 = { b: Blurfx }
+var $615976759 = { b: Blurfxx }
 
 // const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
