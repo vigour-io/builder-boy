@@ -56,7 +56,7 @@
     "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
-    "brisky-render": "2.2.8",
+    "brisky-render": "2.2.12",
     "coveralls": "^2.11.9",
     "nodemon": "^1.11.0",
     "nyc": "^10.0.0",
