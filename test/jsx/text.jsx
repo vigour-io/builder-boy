@@ -55,17 +55,17 @@
 
 // import Bla from './yuz'
 
-// const Blurfx = s => <div style={{
-//   color: 'pink',
-//   fontSize: s.color.compute(),
-//   transform: {
-//     x: s.x.compute() + s.y.compute() //within objects its different...
-//   }
-// }} />
+const Blurfx = s => <div style={{
+  // color: 'pink',
+  fontSize: s.color.compute() + s.bla.compute()
+  // transform: {
+  //   x: s.x.compute() + s.y.compute() //within objects its different...
+  // }
+}} />
 
 // const Blurf = s => <div>{s.title.compute() + s.nested.blurf.compute()}</div>
 
-const Blurf = s => <div blurf={s.title.compute() + s.bla.compute()} />
+// const Blurf = s => <div blurf={s.title.compute() + s.bla.compute()} />
 
 // const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 // const Blurfxx = s => <ul>
