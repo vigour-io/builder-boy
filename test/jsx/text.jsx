@@ -55,18 +55,21 @@
 
 // import Bla from './yuz'
 
-// const Bla = <div></div>
+const Blurfx = s => <div style={{
+  color: 'pink',
+  fontSize: s.color.compute()
+}} />
 
 // const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 
-const Blurfxx = s => <ul>
-  <h1>header</h1>
-  {s.title.compute() + '!' + s.subtitle.compute()}
-  {s.list
-    .sort((a, b) => a.order.compute() - b.order.compute() ? 1 : -1)
-    .map(s => !s.compute() && <li>{s.title.compute()}</li>)}
-  footer
-</ul>
+// const Blurfxx = s => <ul>
+//   <h1>header</h1>
+//   {s.title.compute() + '!' + s.subtitle.compute()}
+//   {s.list
+//     .sort((a, b) => a.order.compute() - b.order.compute() ? 1 : -1)
+//     .map(s => !s.compute() && <li>{s.title.compute()}</li>)}
+//   footer
+// </ul>
 
 //  pavel {s.title.compute().toUpperCase()} pavel
 //   <hr/>
@@ -166,6 +169,6 @@ const Blurfxx = s => <ul>
 
 // a: Gurk, c: Blurfxxx
 
-var $615976759 = { b: Blurfxx }
+var $615976759 = { b: Blurfx }
 
 // const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
