@@ -57,8 +57,13 @@
 
 const Blurfx = s => <div style={{
   color: 'pink',
-  fontSize: s.color.compute()
+  fontSize: s.color.compute(),
+  transform: {
+    x: s.x.compute()
+  }
 }} />
+
+// const Blurfxx = s => <div blurf={s.title.compute() + s.bla.compute()} />
 
 // const Blurfx = s => s.title.compute() && <Bla yuz='true'/>
 
