@@ -175,6 +175,6 @@ const Blurfx = s => <div style={{
 
 // a: Gurk, c: Blurfxxx
 
-var $615976759 = { b: Blurf }
+var $615976759 = { b: Blurfx }
 
 // const Blurfxx = state => state.condition.compute() !== 'ballz' && <div>👃</div>
