@@ -2,6 +2,15 @@ const build = require('../')
 const test = require('tape')
 const { testBuild } = require('./util') //eslint-disable-line
 
+const fs = require('fs')
+
+// raw: true
+// build('./test/jsx/index.js', { target: 'inline', raw: true }, (err, { inline }) => {
+//   if (!err) {
+//     fs.writeFileSync('./test/jsx/dist/bla.js', inline)
+//   }
+// })
+
 test('simple', t => {
   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
