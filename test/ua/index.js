@@ -1,4 +1,4 @@
-import { create } from 'brisky-stamp'
+import { create } from 'brisky-struct'
 import { device } from 'vigour-ua/navigator'
 
 if (device === 'phone') {
