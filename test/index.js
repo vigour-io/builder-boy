@@ -1,6 +1,6 @@
 const build = require('../')
 const test = require('tape')
-const { testBuild, generate } = require('./util') //eslint-disable-line
+const { testBuild } = require('./util') //eslint-disable-line
 
 const fs = require('fs')
 
@@ -10,15 +10,6 @@ const fs = require('fs')
 //     fs.writeFileSync('./test/jsx/dist/bla.js', inline)
 //   }
 // })
-
-test('jsx-basic', t => {
-  build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
-    if (!err) {
-      testBuild('jsx-basic', results, t)
-      t.end()
-    }
-  })
-})
 
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
@@ -87,7 +78,7 @@ test('ua', t => {
 
 test('virtual', t => {
   build({
-    'virtual': {
+    virtual: {
       virtual: true,
       code: 'export default \'hahaha\''
     }
@@ -147,6 +138,26 @@ test('nested', t => {
     if (!err) {
       testBuild('nested', results, t)
       t.end()
+    }
+  })
+})
+
+test('jsx-body', t => {
+  build('./test/jsx-body/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-body', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-basic', t => {
+  build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-basic', results, t)
+      t.end()
+    } else {
+      console.log(err)
     }
   })
 })

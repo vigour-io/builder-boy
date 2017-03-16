@@ -1,1 +1,1 @@
-const Div = s => <div>s.title.compute()</div>
+const Div = s => <div>{s.title.compute()}</div>
