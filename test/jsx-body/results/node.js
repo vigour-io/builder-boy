@@ -1,10 +1,10 @@
-const $4082347707_Div = {
-  tag: 'div',
-  child0: {
-    type: 'text',
-    $: 'title',
-    $transform: ($val, s) => {
-      return s.compute()
+const $2621239985_Div = {
+  tag: 'html',
+  'body': {
+    tag: 'body',
+    child0: {
+      type: 'text',
+      val: `hello!`
     }
   }
 }
