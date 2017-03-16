@@ -1,6 +1,6 @@
 const build = require('../')
 const test = require('tape')
-const { testBuild, generate } = require('./util') //eslint-disable-line
+const { testBuild } = require('./util') //eslint-disable-line
 
 const fs = require('fs')
 
