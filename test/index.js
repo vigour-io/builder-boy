@@ -88,7 +88,7 @@ test('ua', t => {
 
 test('virtual', t => {
   build({
-    'virtual': {
+    virtual: {
       virtual: true,
       code: 'export default \'hahaha\''
     }
