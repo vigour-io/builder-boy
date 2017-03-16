@@ -151,3 +151,13 @@ test('nested', t => {
     }
   })
 })
+
+test('jsx-body', t => {
+  build('./test/jsx-body/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      console.log(results.node)
+      // testBuild('jsx-body', results, t)
+      t.end()
+    }
+  })
+})
