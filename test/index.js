@@ -76,8 +76,7 @@ test('env - inherit', t => {
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
-    inline: [ 'brisky-stamp' ]
+    targets: [ 'node' ]
   }, (err, results, boy) => {
     if (!err) {
       testBuild('ua', results.ua.node.builds, t)
