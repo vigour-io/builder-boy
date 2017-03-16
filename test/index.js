@@ -11,15 +11,6 @@ const fs = require('fs')
 //   }
 // })
 
-test('jsx-basic', t => {
-  build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
-    if (!err) {
-      testBuild('jsx-basic', results, t)
-      t.end()
-    }
-  })
-})
-
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -157,6 +148,17 @@ test('jsx-body', t => {
     if (!err) {
       testBuild('jsx-body', results, t)
       t.end()
+    }
+  })
+})
+
+test('jsx-basic', t => {
+  build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-basic', results, t)
+      t.end()
+    } else {
+      console.log(err)
     }
   })
 })
