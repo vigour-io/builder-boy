@@ -11,11 +11,21 @@ build('./test/jsx/index.js', { target: 'inline', raw: true }, (err, { inline }) 
   }
 })
 
-
 test('jsx-basic', t => {
   build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
       testBuild('jsx-basic', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-any', t => {
+  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      console.log(results.node)
+      // generate('jsx-any', results)
+      // testBuild('jsx-any', results, t)
       t.end()
     }
   })
