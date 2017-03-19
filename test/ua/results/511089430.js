@@ -1,19 +1,14 @@
 var $2244796395={
-  "device": {
-    "$nin": [
-      "phone",
-      "tablet"
-    ]
+  "platform": {
+    "===": "windows"
+  },
+  "browser": {
+    "===": "firefox"
   },
   "$or": [
     {
       "platform": {
-        "!==": "windows"
-      }
-    },
-    {
-      "browser": {
-        "!==": "firefox"
+        "!==": "tizen"
       }
     },
     {
@@ -22,8 +17,14 @@ var $2244796395={
       }
     }
   ],
+  "device": {
+    "$nin": [
+      "phone",
+      "tablet"
+    ]
+  },
   "version": {
-    ">=": 30
+    "<=": "20"
   }
 }
 ;
