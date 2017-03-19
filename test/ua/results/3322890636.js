@@ -1,21 +1,11 @@
 var $2244796395={
-  "$or": [
-    {
-      "device": {
-        "===": "tv"
-      }
-    },
-    {
-      "device": {
-        "===": "tablet"
-      }
-    },
-    {
-      "device": {
-        "===": "phone"
-      }
-    }
-  ]
+  "device": {
+    "$in": [
+      "phone",
+      "tablet",
+      "tv"
+    ]
+  }
 }
 ;
 
