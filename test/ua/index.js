@@ -1,6 +1,6 @@
 import { device, platform, browser, version } from 'vigour-ua/navigator'
 
-if (device === 'phone' || device === 'tablet' || device === 'tv') {
+if (device === 'phone' || device === 'tablet' || (device === 'tv' && platform === 'tizen')) {
   console.log('phone or tablet')
 } else if (platform === 'windows' && browser === 'firefox') {
   console.log('firefox on windows non phone or tablet or tv')

@@ -1,24 +1,34 @@
 var $2244796395={
   "version": {
-    ">": 20
-  },
-  "platform": {
-    "===": "windows"
-  },
-  "browser": {
-    "===": "firefox"
+    "<": 30
   },
   "device": {
     "$nin": [
       "phone",
-      "tablet",
-      "tv"
+      "tablet"
     ]
-  }
+  },
+  "$or": [
+    {
+      "platform": {
+        "!==": "windows"
+      }
+    },
+    {
+      "browser": {
+        "!==": "firefox"
+      }
+    },
+    {
+      "device": {
+        "!==": "tv"
+      }
+    }
+  ]
 }
 ;
 
-if ($2244796395.device === 'phone' || $2244796395.device === 'tablet' || $2244796395.device === 'tv') {
+if ($2244796395.device === 'phone' || $2244796395.device === 'tablet' || ($2244796395.device === 'tv' && $2244796395.platform === 'tizen')) {
   console.log('phone or tablet')
 } else if ($2244796395.platform === 'windows' && $2244796395.browser === 'firefox') {
   console.log('firefox on windows non phone or tablet or tv')
