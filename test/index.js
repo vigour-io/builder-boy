@@ -69,6 +69,7 @@ test('ua', t => {
     nowatch: true,
     targets: [ 'node' ]
   }, (err, results, boy) => {
+    console.log(results.ua.node.select)
     if (!err) {
       testBuild('ua', results.ua.node.builds, t)
       t.end()
