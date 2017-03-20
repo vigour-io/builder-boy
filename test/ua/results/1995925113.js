@@ -1,4 +1,13 @@
 var $2244796395={
+  "browser": {
+    "===": "chrome"
+  },
+  "version": {
+    ">=": "40"
+  },
+  "device": {
+    "===": "tablet"
+  },
   "$or": [
     {
       "device": {

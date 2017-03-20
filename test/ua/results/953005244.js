@@ -1,19 +1,13 @@
 var $2244796395={
   "device": {
-    "===": "tablet"
+    "$nin": [
+      "phone",
+      "tablet"
+    ]
   },
-  "$or": [
-    {
-      "browser": {
-        "!==": "chrome"
-      }
-    },
-    {
-      "version": {
-        "<": "40"
-      }
-    }
-  ]
+  "version": {
+    ">=": "30"
+  }
 }
 ;
 

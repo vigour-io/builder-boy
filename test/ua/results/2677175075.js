@@ -1,6 +1,12 @@
 var $2244796395={
+  "version": {
+    "<": "30"
+  },
   "device": {
-    "!==": "tablet"
+    "$nin": [
+      "phone",
+      "tablet"
+    ]
   }
 }
 ;
