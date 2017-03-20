@@ -1,13 +1,10 @@
 var $2244796395={
-  "device": {
-    "$nin": [
-      "phone",
-      "tablet"
-    ]
-  },
-  "version": {
-    ">=": "30"
-  }
+  "browser": "firefox",
+  "version": "any",
+  "prefix": "any",
+  "platform": "windows",
+  "device": "not-tablet-phone-tv",
+  "webview": "any"
 }
 ;
 

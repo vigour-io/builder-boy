@@ -1,31 +1,10 @@
 var $2244796395={
-  "platform": {
-    "===": "windows"
-  },
-  "browser": {
-    "===": "firefox"
-  },
-  "$or": [
-    {
-      "platform": {
-        "!==": "tizen"
-      }
-    },
-    {
-      "device": {
-        "!==": "tv"
-      }
-    }
-  ],
-  "device": {
-    "$nin": [
-      "phone",
-      "tablet"
-    ]
-  },
-  "version": {
-    "<=": "20"
-  }
+  "browser": "not-chrome",
+  "version": "any",
+  "prefix": "any",
+  "platform": "tizen",
+  "device": "tv",
+  "webview": "any"
 }
 ;
 
