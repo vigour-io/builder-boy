@@ -1,9 +1,9 @@
 var $2244796395={
   "browser": "not-chrome",
-  "version": "any",
+  "version": 39,
   "prefix": "any",
   "platform": "tizen",
-  "device": "tv",
+  "device": "tablet",
   "webview": "any"
 }
 ;

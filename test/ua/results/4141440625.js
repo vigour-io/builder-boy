@@ -1,9 +1,9 @@
 var $2244796395={
-  "browser": "firefox",
-  "version": "any",
+  "browser": "any",
+  "version": 29,
   "prefix": "any",
-  "platform": "windows",
-  "device": "not-tablet-phone-tv",
+  "platform": "any",
+  "device": "not-tablet-phone",
   "webview": "any"
 }
 ;

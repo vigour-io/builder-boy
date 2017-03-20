@@ -1,6 +1,6 @@
 var $2244796395={
   "browser": "any",
-  "version": "any",
+  "version": 31,
   "prefix": "any",
   "platform": "any",
   "device": "not-tablet-phone",
