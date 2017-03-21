@@ -1,4 +1,4 @@
-var $2244796395={"browser":"any","version":"any","prefix":"any","platform":"tizen","device":"tv","webview":"any"}
+var $2244796395={"browser":"any","version":"any","prefix":"any","platform":"any","device":"tablet","webview":"any"}
 ;
 
 if ($2244796395.device === 'phone' || $2244796395.device === 'tablet' || ($2244796395.device === 'tv' && $2244796395.platform === 'tizen')) {
