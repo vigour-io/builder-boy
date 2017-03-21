@@ -1,4 +1,5 @@
 import { device, platform, browser, version } from 'vigour-ua/navigator'
+import 'brisky-render'
 
 if (device === 'phone' || device === 'tablet' || (device === 'tv' && platform === 'tizen')) {
   console.log('phone or tablet')

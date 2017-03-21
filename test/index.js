@@ -68,6 +68,8 @@ test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
     targets: [ 'node' ]
+    targets: [ 'node' ],
+    inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
     console.log(results.ua.node.select)
     if (!err) {
