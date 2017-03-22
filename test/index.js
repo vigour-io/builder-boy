@@ -1,5 +1,6 @@
 const build = require('../')
 const test = require('tape')
+<<<<<<< HEAD
 const { testBuild } = require('./util') //eslint-disable-line
 
 // raw: true
@@ -8,6 +9,9 @@ const { testBuild } = require('./util') //eslint-disable-line
 //     fs.writeFileSync('./test/jsx/dist/bla.js', inline)
 //   }
 // })
+=======
+const { testBuild, generate } = require('./util') //eslint-disable-line
+>>>>>>> master
 
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
@@ -66,10 +70,17 @@ test('env - inherit', t => {
 //   build('./test/ua/index.js', {
 //     nowatch: true,
 //     targets: [ 'node' ],
+<<<<<<< HEAD
 //     inline: [ 'brisky-render' ]
 //   }, (err, results, boy) => {
 //     if (!err) {
 //       // testBuild('ua', results.ua.node.builds, t)
+=======
+//     inline: [ 'brisky-stamp' ]
+//   }, (err, results, boy) => {
+//     if (!err) {
+//       testBuild('ua', results.ua.node.builds, t)
+>>>>>>> master
 //       t.end()
 //     }
 //   })
