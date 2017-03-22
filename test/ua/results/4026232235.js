@@ -1,4 +1,4 @@
-var $2244796395={"browser":"any","version":29,"prefix":"any","platform":"any","device":"any","webview":"any"}
+var $2244796395={"browser":"firefox","version":19,"prefix":"webkit","platform":"windows","device":"any","webview":"any"}
 ;var $1662971556 = require('brisky-struct')
 ;var $2376834506 = require('html-element/global-shim')
 ;var $826337949 = require('stamp')
