@@ -55,18 +55,6 @@ test('env - inherit', t => {
   })
 })
 
-// test('ua', t => {
-//   build('./test/ua/index.js', {
-//     nowatch: true,
-//     inline: [ 'brisky-render' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       // testBuild('ua', results.ua.node.builds, t)
-//       t.end()
-//     }
-//   })
-// })
-
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
