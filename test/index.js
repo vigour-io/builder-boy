@@ -54,15 +54,15 @@ test('simple', t => {
 //     }
 //   })
 // })
-
 test('ua', t => {
   build('./test/ua/index.js', {
-    targets: [ 'node' ],
     nowatch: true,
+    targets: [ 'node' ],
     inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
+    // console.log(results.ua.node.select)
     if (!err) {
-      // testBuild('ua', results.ua.node.builds, t)
+      testBuild('ua', results.ua.node.builds, t)
       t.end()
     }
   })
