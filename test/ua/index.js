@@ -32,7 +32,6 @@ console.log('all')
 // 3. (device!==tablet)
 
 // == step 2
-
 // 1. (device===tablet)&&(browser===chrome&&version>=40)
 // 2. (device===tablet)&&(browser!==chrome||version<40)
 // 3. (device===phone||device===tv)
