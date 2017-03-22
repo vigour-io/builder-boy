@@ -9,7 +9,6 @@ const { testBuild } = require('./util') //eslint-disable-line
 //   }
 // })
 
-
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -63,20 +62,18 @@ test('env - inherit', t => {
   })
 })
 
-
-
-test('ua', t => {
-  build('./test/ua/index.js', {
-    nowatch: true,
-    targets: [ 'node' ],
-    inline: [ 'brisky-render' ]
-  }, (err, results, boy) => {
-    if (!err) {
-      // testBuild('ua', results.ua.node.builds, t)
-      t.end()
-    }
-  })
-})
+// test('ua', t => {
+//   build('./test/ua/index.js', {
+//     nowatch: true,
+//     targets: [ 'node' ],
+//     inline: [ 'brisky-render' ]
+//   }, (err, results, boy) => {
+//     if (!err) {
+//       // testBuild('ua', results.ua.node.builds, t)
+//       t.end()
+//     }
+//   })
+// })
 
 /*
 test('virtual', t => {
