@@ -61,7 +61,7 @@ test('ua', t => {
     targets: [ 'node' ],
     // inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
-    // console.log(results.ua.node.select)
+    console.log(results.ua.node.select)
     if (!err) {
       testBuild('ua', results.ua.node.builds, t)
       t.end()
