@@ -1,4 +1,4 @@
-var $2244796395={"browser":"any","version":"any","prefix":"any","platform":"any","device":"phone","webview":"any"}
+var $2244796395={"browser":"firefox","version":21,"prefix":"any","platform":"windows","device":"not-tv-tablet-phone","webview":"any"}
 ;
 // import 'brisky-render'
 
