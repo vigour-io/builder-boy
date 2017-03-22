@@ -11,6 +11,7 @@ const fs = require('fs')
 //   }
 // })
 
+/*
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -64,10 +65,11 @@ test('env - inherit', t => {
   })
 })
 
+*/
+
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
-    targets: [ 'node' ]
     targets: [ 'node' ],
     inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
@@ -79,6 +81,7 @@ test('ua', t => {
   })
 })
 
+/*
 test('virtual', t => {
   build({
     virtual: {
@@ -164,3 +167,5 @@ test('jsx-basic', t => {
     }
   })
 })
+
+*/
