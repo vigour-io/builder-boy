@@ -1,17 +1,6 @@
 const build = require('../')
 const test = require('tape')
-<<<<<<< HEAD
-const { testBuild } = require('./util') //eslint-disable-line
-
-// raw: true
-// build('./test/jsx/index.js', { target: 'inline', raw: true }, (err, { inline }) => {
-//   if (!err) {
-//     fs.writeFileSync('./test/jsx/dist/bla.js', inline)
-//   }
-// })
-=======
 const { testBuild, generate } = require('./util') //eslint-disable-line
->>>>>>> master
 
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
