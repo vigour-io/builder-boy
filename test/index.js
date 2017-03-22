@@ -58,18 +58,10 @@ test('env - inherit', t => {
 // test('ua', t => {
 //   build('./test/ua/index.js', {
 //     nowatch: true,
-//     targets: [ 'node' ],
-<<<<<<< HEAD
 //     inline: [ 'brisky-render' ]
 //   }, (err, results, boy) => {
 //     if (!err) {
 //       // testBuild('ua', results.ua.node.builds, t)
-=======
-//     inline: [ 'brisky-stamp' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('ua', results.ua.node.builds, t)
->>>>>>> master
 //       t.end()
 //     }
 //   })
