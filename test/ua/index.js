@@ -21,7 +21,6 @@ if (device === 'tablet') {
 console.log('all')
 
 // == step 1
-
 // 1. device===phone||device===tablet||device===tv
 // 2. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version>20
 // 3. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version<=20
