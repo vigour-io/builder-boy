@@ -11,14 +11,14 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 //   })
 // })
 
-// test('simple', t => {
-//   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('basic', results, t)
-//       t.end()
-//     }
-//   })
-// })
+test('simple', t => {
+  build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('basic', results, t)
+      t.end()
+    }
+  })
+})
 
 // test('polyfill', t => {
 //   build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
@@ -57,6 +57,7 @@ const { testBuild, generate } = require('./util') //eslint-disable-line
 
 test('ua', t => {
   build('./test/ua/index.js', {
+    targets: [ 'node' ],
     nowatch: true,
     inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
