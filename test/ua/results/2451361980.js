@@ -1,59 +1,4 @@
 var $2244796395={"browser":"not-firefox-chrome-safari-edge-ie","version":29,"prefix":"not-webkit-moz","platform":"not-android-ios","device":"not-tv-tablet-phone","webview":"any"}
-;var $2822145224_exports = {}
-
- // FILE: /Users/youzi/dev/brisky-stamp/lib/index.js
-if (!global.briskystamp) {
-  const bs = {}
-  const ts = bs.ts = 535673248076
-  var tsInProgress = false
-  var cnt = 0
-  var d
-  var on
-
-  global.briskystamp = bs
-
-  bs.inProgress = false
-  bs.offset = 0
-
-  const ms = () => {
-    if (!tsInProgress) {
-      cnt = 0
-      d = Date.now() - ts + bs.offset
-      tsInProgress = true
-      setTimeout(() => { tsInProgress = false })
-    } else {
-      d += ++cnt / 9999
-    }
-    return d
-  }
-
-  bs.create = override => override || ms()
-
-  bs.on = fn => {
-    if (!on) {
-      on = [ fn ]
-    } else {
-      on.push(fn)
-    }
-  }
-
-  bs.clear = () => { on = false } // rename this to stop
-
-  bs.close = () => {
-    if (on && !bs.inProgress) {
-      bs.inProgress = true
-      for (let i = 0; i < on.length; i++) { on[i]() }
-      bs.inProgress = on = false
-    }
-  }
-
-  bs.parse = stamp => stamp > 1e6 ? (stamp + ts) : stamp
-}
-
-const $2822145224_$501350144 = global.briskystamp
-
-
-var $2822145224 = $2822145224_$501350144
 ;var $1662971556 = require('brisky-struct')
 ;var $2376834506 = require('html-element/global-shim')
 ;var $826337949 = require('stamp')
@@ -2519,7 +2464,6 @@ var $215521817_$4202851505_$ALL$ = {
 
 var $215521817 = $215521817_$4202851505_$ALL$
 ;
-
 
 
 if ($2244796395.device === 'phone' || $2244796395.device === 'tablet' || ($2244796395.device === 'tv' && $2244796395.platform === 'tizen')) {
