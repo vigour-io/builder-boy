@@ -1,19 +1,20 @@
-import { device, platform, browser, version } from 'vigour-ua/navigator'
+var $2244796395={"browser":"not-firefox","version":31,"prefix":"any","platform":"any","device":"not-phone-tablet-tv","webview":"any"}
+;
 // import 'brisky-render'
 
-if (device === 'phone' || device === 'tablet' || (device === 'tv' && platform === 'tizen')) {
+if ($2244796395.device === 'phone' || $2244796395.device === 'tablet' || ($2244796395.device === 'tv' && $2244796395.platform === 'tizen')) {
   console.log('phone or tablet')
-} else if (platform === 'windows' && browser === 'firefox') {
+} else if ($2244796395.platform === 'windows' && $2244796395.browser === 'firefox') {
   console.log('firefox on windows non phone or tablet or tv')
-  console.log(version > 20 ? '20+' : '20-')
+  console.log($2244796395.version > 20 ? '20+' : '20-')
 } else {
   console.log('other')
-  console.log(version < 30 ? '30-' : '30+')
+  console.log($2244796395.version < 30 ? '30-' : '30+')
 }
 
-if (device === 'tablet') {
+if ($2244796395.device === 'tablet') {
   console.log('any tablet')
-  if (browser === 'chrome' && version >= 40) {
+  if ($2244796395.browser === 'chrome' && $2244796395.version >= 40) {
     console.log('chrome 40+ on any tablet')
   }
 }
