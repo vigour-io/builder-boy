@@ -2,14 +2,23 @@ const build = require('../')
 const test = require('tape')
 const { testBuild, generate } = require('./util') //eslint-disable-line
 
-// test('jsx-any', t => {
-//   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('jsx-any', results, t)
-//       t.end()
-//     }
-//   })
-// })
+test('imports', t => {
+  build('./test/imports/a.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('imports', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-any', t => {
+  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-any', results, t)
+      t.end()
+    }
+  })
+})
 
 test('simple', t => {
   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
@@ -20,40 +29,40 @@ test('simple', t => {
   })
 })
 
-// test('polyfill', t => {
-//   build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('polyfill', results, t)
-//       t.end()
-//     }
-//   })
-// })
+test('polyfill', t => {
+  build('./test/polyfill/a.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('polyfill', results, t)
+      t.end()
+    }
+  })
+})
 
-// test('env - override', t => {
-//   build('./test/env/index.js', {
-//     nowatch: true,
-//     targets: [ 'inline' ],
-//     env: { beurs: 'ha!' }
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('env', results, t)
-//       t.end()
-//     }
-//   })
-// })
+test('env - override', t => {
+  build('./test/env/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ],
+    env: { beurs: 'ha!' }
+  }, (err, results, boy) => {
+    if (!err) {
+      testBuild('env', results, t)
+      t.end()
+    }
+  })
+})
 
-// test('env - inherit', t => {
-//   process.env.beurs = 'ha!'
-//   build('./test/env/index.js', {
-//     nowatch: true,
-//     targets: [ 'inline' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('env', results, t)
-//       t.end()
-//     }
-//   })
-// })
+test('env - inherit', t => {
+  process.env.beurs = 'ha!'
+  build('./test/env/index.js', {
+    nowatch: true,
+    targets: [ 'inline' ]
+  }, (err, results, boy) => {
+    if (!err) {
+      testBuild('env', results, t)
+      t.end()
+    }
+  })
+})
 
 test('ua', t => {
   build('./test/ua/index.js', {
@@ -69,7 +78,6 @@ test('ua', t => {
   })
 })
 
-/*
 test('virtual', t => {
   build({
     virtual: {
@@ -155,5 +163,3 @@ test('jsx-basic', t => {
     }
   })
 })
-
-*/
