@@ -174,3 +174,14 @@ test('jsx-multi', t => {
     }
   })
 })
+
+test('jsx-object', t => {
+  build('./test/jsx-object/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-object', results, t)
+      t.end()
+    } else {
+      console.log(err)
+    }
+  })
+})
