@@ -67,7 +67,7 @@ test('env - inherit', t => {
 test('ua', t => {
   build('./test/ua/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
+    targets: [ 'node' ]
     // inline: [ 'brisky-render' ]
   }, (err, results, boy) => {
     console.log(results.ua.node.select)
@@ -157,6 +157,17 @@ test('jsx-basic', t => {
   build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
       testBuild('jsx-basic', results, t)
+      t.end()
+    } else {
+      console.log(err)
+    }
+  })
+})
+
+test('jsx-multi', t => {
+  build('./test/jsx-multi/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-multi', results, t)
       t.end()
     } else {
       console.log(err)
