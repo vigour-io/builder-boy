@@ -64,15 +64,40 @@ test('env - inherit', t => {
   })
 })
 
-test('ua', t => {
-  build('./test/ua/index.js', {
+test('ua/basic', t => {
+  build('./test/ua/basic/index.js', {
     nowatch: true,
-    targets: [ 'node' ],
-    // inline: [ 'brisky-render' ]
+    targets: [ 'node' ]
   }, (err, results, boy) => {
     console.log(results.ua.node.select)
     if (!err) {
-      testBuild('ua', results.ua.node.builds, t)
+      testBuild('ua/basic', results.ua.node.builds, t)
+      t.end()
+    }
+  })
+})
+
+test('ua/versions', t => {
+  build('./test/ua/versions/index.js', {
+    nowatch: true,
+    targets: [ 'node' ]
+  }, (err, results, boy) => {
+    console.log(results.ua.node.select)
+    if (!err) {
+      testBuild('ua/versions', results.ua.node.builds, t)
+      t.end()
+    }
+  })
+})
+
+test('ua/coverage', t => {
+  build('./test/ua/coverage/index.js', {
+    nowatch: true,
+    targets: [ 'node' ]
+  }, (err, results, boy) => {
+    console.log(results.ua.node.select)
+    if (!err) {
+      testBuild('ua/coverage', results.ua.node.builds, t)
       t.end()
     }
   })
@@ -157,6 +182,28 @@ test('jsx-basic', t => {
   build('./test/jsx-basic/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
       testBuild('jsx-basic', results, t)
+      t.end()
+    } else {
+      console.log(err)
+    }
+  })
+})
+
+test('jsx-multi', t => {
+  build('./test/jsx-multi/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-multi', results, t)
+      t.end()
+    } else {
+      console.log(err)
+    }
+  })
+})
+
+test('jsx-object', t => {
+  build('./test/jsx-object/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-object', results, t)
       t.end()
     } else {
       console.log(err)
