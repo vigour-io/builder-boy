@@ -90,6 +90,19 @@ test('ua/versions', t => {
   })
 })
 
+test('ua/coverage', t => {
+  build('./test/ua/coverage/index.js', {
+    nowatch: true,
+    targets: [ 'node' ]
+  }, (err, results, boy) => {
+    console.log(results.ua.node.select)
+    if (!err) {
+      testBuild('ua/coverage', results.ua.node.builds, t)
+      t.end()
+    }
+  })
+})
+
 test('virtual', t => {
   build({
     virtual: {
