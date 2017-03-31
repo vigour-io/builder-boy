@@ -18,26 +18,8 @@ if (device === 'tablet') {
   }
 }
 
-console.log('all')
+if (version < 50) {
 
-// == step 1
-// 1. device===phone||device===tablet||device===tv
-// 2. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version>20
-// 3. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version<=20
-// 4. (device[$nin=phone,tablet,tv])&&(platform!==windows||browser!==firefox)&&version<30
-// 5. (device[$nin=phone,tablet,tv])&&(platform!==windows||browser!==firefox)&&version>=30
+} else if (version < 60) {
 
-// 1. (device===tablet)&&(browser===chrome&&version>=40)
-// 2. (device===tablet)&&(browser!==chrome||version<40)
-// 3. (device!==tablet)
-
-// == step 2
-// 1. (device===tablet)&&(browser===chrome&&version>=40)
-// 2. (device===tablet)&&(browser!==chrome||version<40)
-// 3. (device===phone||device===tv)
-// 4. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version>20
-// 5. (device[$nin=phone,tablet,tv])&&(platform===windows&&browser===firefox)&&version<=20
-// 6. (device[$nin=phone,tablet,tv])&&(platform!==windows||browser!==firefox)&&version<30
-// 7. (device[$nin=phone,tablet,tv])&&(platform!==windows||browser!==firefox)&&version>=30
-
-// browser, version, prefix, platform, device, webview
+}
