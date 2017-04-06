@@ -20,6 +20,15 @@ test('jsx-any', t => {
   })
 })
 
+test('jsx-type', t => {
+  build('./test/jsx-type/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-type', results, t)
+      t.end()
+    }
+  })
+})
+
 test('simple', t => {
   build('./test/basic/a.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -90,18 +99,17 @@ test('ua/versions', t => {
   })
 })
 
-test('ua/coverage', t => {
-  build('./test/ua/coverage/index.js', {
-    nowatch: true,
-    targets: [ 'node' ]
-  }, (err, results, boy) => {
-    console.log(results.ua.node.select)
-    if (!err) {
-      testBuild('ua/coverage', results.ua.node.builds, t)
-      t.end()
-    }
-  })
-})
+// test('ua/coverage', t => {
+//   build('./test/ua/coverage/index.js', {
+//     nowatch: true,
+//     targets: [ 'node' ]
+//   }, (err, results, boy) => {
+//     if (!err) {
+//       testBuild('ua/coverage', results.ua.node.builds, t)
+//       t.end()
+//     }
+//   })
+// })
 
 test('virtual', t => {
   build({
