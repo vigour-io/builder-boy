@@ -11,19 +11,19 @@ test('imports', t => {
   })
 })
 
-test('jsx-any', t => {
-  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
+test('jsx-nocompute', t => {
+  build('./test/jsx-nocompute/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
-      testBuild('jsx-any', results, t)
+      testBuild('jsx-nocompute', results, t)
       t.end()
     }
   })
 })
 
-test('jsx-switcher', t => {
-  build('./test/jsx-switcher/index.js', { nowatch: true }, (err, results, boy) => {
+test('jsx-any', t => {
+  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
-      testBuild('jsx-switcher', results, t)
+      testBuild('jsx-any', results, t)
       t.end()
     }
   })
@@ -42,6 +42,24 @@ test('jsx-attributes', t => {
   build('./test/jsx-attributes/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
       testBuild('jsx-attributes', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-switcher', t => {
+  build('./test/jsx-switcher/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-switcher', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-type', t => {
+  build('./test/jsx-type/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      generate('jsx-type', results, t)
       t.end()
     }
   })
