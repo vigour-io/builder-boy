@@ -32,7 +32,16 @@ test('jsx-switcher', t => {
 test('jsx-type', t => {
   build('./test/jsx-type/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
-      generate('jsx-type', results, t)
+      testBuild('jsx-type', results, t)
+      t.end()
+    }
+  })
+})
+
+test('jsx-attributes', t => {
+  build('./test/jsx-attributes/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-attributes', results, t)
       t.end()
     }
   })
