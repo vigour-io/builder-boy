@@ -2,6 +2,15 @@ const build = require('../')
 const test = require('tape')
 const { testBuild, generate } = require('./util') //eslint-disable-line
 
+test('jsx-any', t => {
+  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-any', results, t)
+      t.end()
+    }
+  })
+})
+
 test('imports', t => {
   build('./test/imports/a.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -15,15 +24,6 @@ test('jsx-nocompute', t => {
   build('./test/jsx-nocompute/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
       testBuild('jsx-nocompute', results, t)
-      t.end()
-    }
-  })
-})
-
-test('jsx-any', t => {
-  build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
-    if (!err) {
-      testBuild('jsx-any', results, t)
       t.end()
     }
   })
