@@ -54,7 +54,7 @@ var $2579574009_HorizontalList = {
       $: 'items.$any',
       props: {
         default: {
-          type: $2579574009_HorizontalListItem
+          _mergeit: $2579574009_HorizontalListItem
         }
       },
       resolveAttr: {

@@ -16,7 +16,7 @@ var $2683063157 = {
   child0: {
     tag: 'div',
     child0: {
-      type: $2683063157_Page,
+      _mergeit: $2683063157_Page,
       $: 'page.current.$any',
       $any: {
         component: {
