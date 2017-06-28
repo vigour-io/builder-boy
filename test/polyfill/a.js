@@ -1,3 +1,5 @@
+const a = Object.assign({ a: 5 }, { b: 6 })
+
 const blurf = () => {}
 
 async function bla () {
