@@ -52,9 +52,7 @@ const $2579574009_HorizontalList = {
       tag: 'div',
       $: 'items.$any',
       props: {
-        default: {
-          _mergeit: $2579574009_HorizontalListItem
-        }
+        default: {}
       },
       resolveAttr: {
         style: {
