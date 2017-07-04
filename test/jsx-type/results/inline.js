@@ -53,7 +53,9 @@ var $2579574009_HorizontalList = {
       tag: 'div',
       $: 'items.$any',
       props: {
-        default: {}
+        default: {
+          type: $2579574009_HorizontalListItem
+        }
       },
       resolveAttr: {
         style: {
