@@ -1,7 +1,9 @@
 var $4086546563_exports = {}
 var $4086546563 = {}
 
-;const $3877244887_blurf = () => {}
+;const $3877244887_a = Object.assign({ a: 5 }, { b: 6 })
+
+const $3877244887_blurf = () => {}
 
 async function $3877244887_bla () {
   await $3877244887_blurf() + '!'
