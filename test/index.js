@@ -2,6 +2,15 @@ const build = require('../')
 const test = require('tape')
 const { testBuild, generate } = require('./util') //eslint-disable-line
 
+test('jsx-switch-path', t => {
+  build('./test/jsx-switch-path/index.js', { nowatch: true }, (err, results, boy) => {
+    if (!err) {
+      testBuild('jsx-switch-path', results, t)
+      t.end()
+    }
+  })
+})
+
 test('jsx-any', t => {
   build('./test/jsx-any/index.js', { nowatch: true }, (err, results, boy) => {
     if (!err) {
@@ -118,43 +127,43 @@ test('env - inherit', t => {
   })
 })
 
-// test('ua/basic', t => {
-//   build('./test/ua/basic/index.js', {
-//     nowatch: true,
-//     targets: [ 'node' ]
-//   }, (err, results, boy) => {
-//     console.log(results.ua.node.select)
-//     if (!err) {
-//       testBuild('ua/basic', results.ua.node.builds, t)
-//       t.end()
-//     }
-//   })
-// })
+// // test('ua/basic', t => {
+// //   build('./test/ua/basic/index.js', {
+// //     nowatch: true,
+// //     targets: [ 'node' ]
+// //   }, (err, results, boy) => {
+// //     console.log(results.ua.node.select)
+// //     if (!err) {
+// //       testBuild('ua/basic', results.ua.node.builds, t)
+// //       t.end()
+// //     }
+// //   })
+// // })
 
-// test('ua/versions', t => {
-//   build('./test/ua/versions/index.js', {
-//     nowatch: true,
-//     targets: [ 'node' ]
-//   }, (err, results, boy) => {
-//     console.log(results.ua.node.select)
-//     if (!err) {
-//       testBuild('ua/versions', results.ua.node.builds, t)
-//       t.end()
-//     }
-//   })
-// })
+// // test('ua/versions', t => {
+// //   build('./test/ua/versions/index.js', {
+// //     nowatch: true,
+// //     targets: [ 'node' ]
+// //   }, (err, results, boy) => {
+// //     console.log(results.ua.node.select)
+// //     if (!err) {
+// //       testBuild('ua/versions', results.ua.node.builds, t)
+// //       t.end()
+// //     }
+// //   })
+// // })
 
-// test('ua/coverage', t => {
-//   build('./test/ua/coverage/index.js', {
-//     nowatch: true,
-//     targets: [ 'node' ]
-//   }, (err, results, boy) => {
-//     if (!err) {
-//       testBuild('ua/coverage', results.ua.node.builds, t)
-//       t.end()
-//     }
-//   })
-// })
+// // test('ua/coverage', t => {
+// //   build('./test/ua/coverage/index.js', {
+// //     nowatch: true,
+// //     targets: [ 'node' ]
+// //   }, (err, results, boy) => {
+// //     if (!err) {
+// //       testBuild('ua/coverage', results.ua.node.builds, t)
+// //       t.end()
+// //     }
+// //   })
+// // })
 
 test('virtual', t => {
   build({
