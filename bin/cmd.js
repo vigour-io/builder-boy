@@ -3,6 +3,7 @@ const { dirname, isAbsolute, join } = require('path')
 const build = require('../')
 const file = process.argv[2]
 const dest = process.argv[3]
+const { exec } = require('child_process')
 const watch = ~process.argv.indexOf('-w') || ~process.argv.indexOf('--watch')
 const raw = ~process.argv.indexOf('-r') || ~process.argv.indexOf('--raw')
 var env, targets
@@ -51,6 +52,25 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
   })
 })
 
+const sendNotification = (err) => {
+  const applescript = [
+    // sound name "Sound Name",
+    'set notificationTitle to "hello"',
+    `display notification "${
+      err.file.split('/').slice(-5).join('/')
+    }" with title "builder-boy 👲" subtitle "${
+      err.message
+    }"`
+  ]
+  const s = applescript.map((b, i, arr) => {
+    return `osascript -e '${b}' ${i !== arr.length - 1 ? ' && ' : ''}`
+  }).join('')
+  exec(s, (err, stdout, stderr) => {
+    if (err) {
+      return
+    }
+  })
+}
 // add pipe in option vs filepath -- simpler
 // for dest use -d flag else just pipe out pipe in out nice!
 build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) => {
@@ -61,6 +81,8 @@ build(file, { raw, nowatch: !watch, env: env, targets: targets }, (err, code) =>
       } else {
         console.log(err)
       }
+    } else {
+      sendNotification(err)
     }
   } else {
     if (dest) {
