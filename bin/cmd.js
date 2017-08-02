@@ -54,7 +54,6 @@ const write = (dest, code, type) => new Promise((resolve, reject) => {
 
 const sendNotification = (err) => {
   const applescript = [
-    // sound name "Sound Name",
     'set notificationTitle to "hello"',
     `display notification "${
       err.file.split('/').slice(-5).join('/')
@@ -66,9 +65,7 @@ const sendNotification = (err) => {
     return `osascript -e '${b}' ${i !== arr.length - 1 ? ' && ' : ''}`
   }).join('')
   exec(s, (err, stdout, stderr) => {
-    if (err) {
-      return
-    }
+    if (err) { return }
   })
 }
 // add pipe in option vs filepath -- simpler
